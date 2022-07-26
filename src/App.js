@@ -7,6 +7,7 @@ import NavSignedIn from './components/Header/NavSignedIn';
 import NavSignedOut from './components/Header/NavSignedOut';
 import About from './components/Main/About';
 import Footer from './components/Footer/Footer'
+import HomePageSignedOut from './components/Main/HomePageSignedOut';
 
 function App() {
 	const [signedIn, setSignedIn] = useState(false);
@@ -15,10 +16,12 @@ function App() {
 		<div className='bg-color'>
 			<header>{signedIn ? <NavSignedIn /> : <NavSignedOut />}</header>
 			<main>
-
+				<Routes>
+					<Route path='/' element={<HomePageSignedOut />} />
+				</Routes>
 			</main>
 			<footer>
-				<Footer/>
+				<Footer />
 			</footer>
 		</div>
 	);

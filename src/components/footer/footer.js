@@ -3,7 +3,7 @@ import './Footer.css'
 function footer(props) {
 	return (
 		<div className='container-fluid text-center footer mt-3'>
-			<p>@ Copyright 2022: Moving Co.</p>
+			<p className='default-font'>@ Copyright 2022: Moving Co.</p>
 		</div>
 	);
 }
