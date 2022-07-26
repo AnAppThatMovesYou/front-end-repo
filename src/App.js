@@ -12,7 +12,7 @@ function App() {
 	const [signedIn, setSignedIn] = useState(false);
 
 	return (
-		<>
+		<div className='bg-color'>
 			<header>{signedIn ? <NavSignedIn /> : <NavSignedOut />}</header>
 			<main>
 
@@ -20,7 +20,7 @@ function App() {
 			<footer>
 				<Footer/>
 			</footer>
-		</>
+		</div>
 	);
 }
 
