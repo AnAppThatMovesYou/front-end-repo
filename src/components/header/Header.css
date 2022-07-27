@@ -1,5 +1,5 @@
 header {
-    min-width: 100vw
+    min-width: 100vw;
 }
 
 .nav-link {
@@ -11,7 +11,7 @@ header {
 .nav-link:hover {
     color: black;
     font-weight: 500;
-    border: solid black 2px;
+    /* border: solid black 2px; */
     /* border-radius: 25px; */
 }
 
