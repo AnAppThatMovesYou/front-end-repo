@@ -7,7 +7,7 @@ function NavSignedOut(props) {
 				<div className='container-fluid'>
 					<a className='navbar-brand' href='#'>
 						<img
-							src={require('../../images/movingCo-logos.jpeg')}
+							src={require('../../images/MovingCo-logos_transparent.png')}
 							alt=''
 							className='logo'
 						/>

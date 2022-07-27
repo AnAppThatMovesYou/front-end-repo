@@ -1,6 +1,6 @@
 import './Footer.css'
 
-function footer(props) {
+function Footer(props) {
 	return (
 		<div className='container-fluid text-center footer mt-3'>
 			<p className='default-font'>@ Copyright 2022: Moving Co.</p>
@@ -8,4 +8,4 @@ function footer(props) {
 	);
 }
 
-export default footer;
+export default Footer;

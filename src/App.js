@@ -15,7 +15,7 @@ function App() {
 	return (
 		<div className='bg-color'>
 			<header>{signedIn ? <NavSignedIn /> : <NavSignedOut />}</header>
-			<main>
+			<main className=''>
 				<Routes>
 					<Route path='/' element={<HomePageSignedOut />} />
 				</Routes>

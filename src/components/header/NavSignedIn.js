@@ -7,7 +7,7 @@ function NavSignedIn(props) {
 				<div class='container-fluid'>
 					<a class='navbar-brand' href='#'>
 						<img
-							src={require('../../images/movingCo-logos.jpeg')}
+							src={require('../../images/MovingCo-logos_transparent.png')}
 							alt=''
 							className='logo'
 						/>

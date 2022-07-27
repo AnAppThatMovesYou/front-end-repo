@@ -1,3 +1,7 @@
 header {
     min-width: 100vw
 }
+
+.nav-link {
+    color: black;
+}

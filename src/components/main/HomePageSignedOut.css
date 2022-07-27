@@ -1,0 +1,16 @@
+.container {
+    height: 70vh;
+}
+
+.text {
+    font-size: 5rem;
+    line-height: 1.2;
+}
+
+.btn {
+    width: 30%;
+    margin: 1rem;
+    background-color: none;
+    border: solid black 1px;
+    max-width: 245px;
+}
