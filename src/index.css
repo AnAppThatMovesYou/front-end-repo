@@ -98,9 +98,20 @@ button {
   color: rgb(42, 42, 42)
 }
 
+.light-text-color{
+  color: rgb(32, 32, 32);
+}
+
 .default-font {
   font-family:  'Lora', serif;
   font-weight: 500;
-  /* font-family: 'Playfair Display', serif;
-  font-family: 'Vollkorn', serif; */
+
+}
+
+.playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.vollkorn {
+  font-family: 'Vollkorn', serif;
 }
