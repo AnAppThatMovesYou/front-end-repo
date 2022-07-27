@@ -1,5 +1,21 @@
 .footer {
-    min-width: 100vw;
-    position: fixed;
-    bottom: 0;
+    background-color: rgb(40, 40, 40);
+    color: white;
+}
+
+.footer-slogan {
+    color: rgb( 57, 57, 57);
+}
+
+.links-container {
+    font-size: 1.2rem;
+}
+
+.footer-logo {
+    height: 3rem;
+    width: auto;
+}
+
+.gap-for-footer {
+    gap: 25%;
 }

@@ -1,6 +1,6 @@
-import './Footer.css'
+import './Footer.css';
 
-function Footer(props) {
+function FooterSignedOut(props) {
 	return (
 		<div className='container-fluid text-center footer mt-3'>
 			<p className='default-font'>@ Copyright 2022: Moving Co.</p>
@@ -8,4 +8,4 @@ function Footer(props) {
 	);
 }
 
-export default Footer;
+export default FooterSignedOut;

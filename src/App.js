@@ -6,17 +6,20 @@ import { useState } from 'react';
 import NavSignedIn from './components/Header/NavSignedIn';
 import NavSignedOut from './components/Header/NavSignedOut';
 import About from './components/Main/About';
-import Footer from './components/Footer/Footer'
 import HomePageSignedOut from './components/Main/HomePageSignedOut';
 import HomePageSignedIn from './components/Main/HomePageSignedIn'
-import BlogDetails from './components/Main/BlogDetails';
+import BlogDetails from './components/Main/BlogDetails'
+import FooterSignedOut from './components/Footer/FooterSignedOut';
+import FooterSignedIn from './components/Footer/FooterSignedIn';
 
 function App() {
 	const [signedIn, setSignedIn] = useState(false);
 
 	return (
 		<div className='bg-color'>
-			<header>{signedIn ? <NavSignedIn /> : <NavSignedOut />}</header>
+			<header>
+				{signedIn ? <NavSignedIn /> : <NavSignedOut />}
+				</header>
 			<main>
 				<Routes>
 					<Route path='/' element={<HomePageSignedOut />} />
@@ -26,7 +29,7 @@ function App() {
 				</Routes>
 			</main>
 			<footer>
-				<Footer />
+				{signedIn ? <FooterSignedIn/> : <FooterSignedIn/>}
 			</footer>
 		</div>
 	);
