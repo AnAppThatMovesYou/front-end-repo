@@ -11,26 +11,26 @@ import HomePageSignedIn from './components/Main/HomePageSignedIn'
 import BlogDetails from './components/Main/BlogDetails'
 import FooterSignedOut from './components/Footer/FooterSignedOut';
 import FooterSignedIn from './components/Footer/FooterSignedIn';
+import SignUpForm from './components/Main/SignUpForm';
+import SignInForm from './components/Main/SignInForm';
 
 function App() {
 	const [signedIn, setSignedIn] = useState(false);
 
 	return (
 		<div className='bg-color'>
-			<header>
-				{signedIn ? <NavSignedIn /> : <NavSignedOut />}
-				</header>
+			<header>{signedIn ? <NavSignedIn /> : <NavSignedOut />}</header>
 			<main>
 				<Routes>
 					<Route path='/' element={<HomePageSignedOut />} />
-					<Route path='/home' element={<HomePageSignedIn />}/>
-					<Route path='/about' element={<About/>}/>
-					<Route path='blog/:details' element={<BlogDetails/>}/>
+					<Route path='/home' element={<HomePageSignedIn />} />
+					<Route path='/signup' element={<SignUpForm />} />
+					<Route path='/signin' element={<SignInForm />} />
+					<Route path='/about' element={<About />} />
+					<Route path='blog/:details' element={<BlogDetails />} />
 				</Routes>
 			</main>
-			<footer>
-				{signedIn ? <FooterSignedIn/> : <FooterSignedIn/>}
-			</footer>
+			<footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer>
 		</div>
 	);
 }

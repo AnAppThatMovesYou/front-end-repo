@@ -2,7 +2,7 @@ import './HomePageSignedOut.css';
 
 function HomePageSignedOut(props) {
 	return (
-		<div className='container d-flex flex-column justify-content-center'>
+		<div className='container d-flex flex-column justify-content-center pb-5'>
             <div className='container-fluid w-100'>
                 <p className='default-font text'>
                     An App
