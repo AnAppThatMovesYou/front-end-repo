@@ -1,0 +1,19 @@
+header {
+    min-width: 100vw;
+}
+
+.nav-link {
+    color: rgb(74, 74, 74);
+    font-weight: 300;
+    padding: 0.5rem;
+}
+
+.nav-link:hover {
+    color: black;
+    font-weight: 500;
+}
+
+.navbar-toggler {
+    font-size: 1.5rem;
+    box-shadow: none !important;
+}
