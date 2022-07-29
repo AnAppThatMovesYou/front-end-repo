@@ -7,8 +7,8 @@ import NavSignedIn from './components/Header/NavSignedIn';
 import NavSignedOut from './components/Header/NavSignedOut';
 import About from './components/Main/About';
 import HomePageSignedOut from './components/Main/HomePageSignedOut';
-import HomePageSignedIn from './components/Main/HomePageSignedIn'
-import BlogDetails from './components/Main/BlogDetails'
+import HomePageSignedIn from './components/Main/HomePageSignedIn';
+import BlogDetails from './components/Main/BlogDetails';
 import FooterSignedOut from './components/Footer/FooterSignedOut';
 import FooterSignedIn from './components/Footer/FooterSignedIn';
 import SignUpForm from './components/Main/SignUpForm';
