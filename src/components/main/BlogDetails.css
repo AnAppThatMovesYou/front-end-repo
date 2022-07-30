@@ -1,0 +1,31 @@
+.details-container {
+    max-width: 60rem;
+}
+
+.blog-category {
+    font-size: 1.4rem;
+}
+
+.blog-title {
+    font-size: 2rem;
+}
+
+.blog-summary {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 500;
+    max-width: 50rem;
+}
+
+.image-container {
+    height: 20rem;
+    width: 60rem;
+}
+
+img {
+    height: 100%;
+}
+
+.blog-content {
+    font-size: 1.2rem;
+}
