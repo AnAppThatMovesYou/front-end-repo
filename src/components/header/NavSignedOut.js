@@ -1,11 +1,13 @@
-import './Header.css'
+import './Header.css';
+import { useNavigate } from 'react-router-dom';
 
 function NavSignedOut(props) {
+	let navigate = useNavigate();
 	return (
 		<div>
 			<nav className='navbar navbar-expand-lg navbar-light bg-light signed-out'>
 				<div className='container-fluid'>
-					<a className='navbar-brand' href='#'>
+					<a className='navbar-brand' href='/'>
 						<img
 							src={require('../../images/MovingCo-logos_transparent.png')}
 							alt=''
@@ -25,17 +27,17 @@ function NavSignedOut(props) {
 					<div className='collapse navbar-collapse' id='navbarSupportedContent'>
 						<ul className='navbar-nav ms-auto mb-2 mb-lg-0 default-font light-text-color'>
 							<li className='nav-item'>
-								<a className='nav-link' href='#'>
+								<a className='nav-link' href='/signup'>
 									Sign up
 								</a>
 							</li>
 							<li className='nav-item'>
-								<a className='nav-link' href='#'>
+								<a className='nav-link' href='/signin'>
 									Sign in
 								</a>
 							</li>
 							<li className='nav-item'>
-								<a href='' className='nav-link'>
+								<a href='/about' className='nav-link'>
 									About
 								</a>
 							</li>
