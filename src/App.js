@@ -13,6 +13,7 @@ import FooterSignedOut from './Components/Footer/FooterSignedOut';
 import FooterSignedIn from './Components/Footer/FooterSignedIn';
 import SignUpForm from './Components/Main/SignUpForm';
 import SignInForm from './Components/Main/SignInForm';
+import CreateBlog from './Components/Main/CreateBlog';
 
 function App() {
 	// INITIAL STATE SETUPS
@@ -45,7 +46,13 @@ function App() {
 
 	return (
 		<div className='bg-color'>
-			<header>{signedIn ? <NavSignedIn /> : <NavSignedOut />}</header>
+			<header>
+				{signedIn ? (
+					<NavSignedIn signedIn={signedIn} setSignedIn={setSignedIn} />
+				) : (
+					<NavSignedOut signedIn={signedIn} />
+				)}
+			</header>
 			<main>
 				<Routes>
 					<Route path='/' element={<HomePageSignedOut />} />
@@ -59,6 +66,8 @@ function App() {
 								initialSignUp={initialSignUp}
 								signUpJwt={signUpJwt}
 								setSignUpJwt={setSignUpJwt}
+								signedIn={signedIn}
+								setSignedIn={setSignedIn}
 							/>
 						}
 					/>
@@ -72,11 +81,17 @@ function App() {
 								LogInJwt={LogInJwt}
 								setLogInJwt={setLogInJwt}
 								signUpJwt={signUpJwt}
+								signedIn={signedIn}
+								setSignedIn={setSignedIn}
 							/>
 						}
 					/>
 					<Route path='/about' element={<About />} />
 					<Route path='blog/:details' element={<BlogDetails />} />
+					<Route
+						path='/createblog'
+						element={<CreateBlog logIn={logIn} LogInJwt={LogInJwt} />}
+					/>
 				</Routes>
 			</main>
 			<footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer>

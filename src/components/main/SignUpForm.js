@@ -3,7 +3,14 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function SignUpForm({ signUp, setSignUp, signUpJwt, setSignUpJwt }) {
+function SignUpForm({
+	signUp,
+	setSignUp,
+	signUpJwt,
+	setSignUpJwt,
+	signedIn,
+	setSignedIn,
+}) {
 	const navigate = useNavigate();
 
 	function handleChange(event) {
@@ -20,11 +27,10 @@ function SignUpForm({ signUp, setSignUp, signUpJwt, setSignUpJwt }) {
 		try {
 			const response = await axios.post('http://localhost:8080/signup', signUp);
 			console.log('RESPONSE', response);
-			
-			
 
 			if (response.status === 200) {
 				// setSignUpJwt(response.data.token);
+				setSignedIn(true);
 				navigate('/signin');
 			}
 		} catch (error) {
