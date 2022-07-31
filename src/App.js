@@ -56,7 +56,10 @@ function App() {
 			<main>
 				<Routes>
 					<Route path='/' element={<HomePageSignedOut />} />
-					<Route path='/home' element={<HomePageSignedIn />} />
+					<Route
+						path='/home'
+						element={<HomePageSignedIn LogInJwt={LogInJwt} />}
+					/>
 					<Route
 						path='/signup'
 						element={

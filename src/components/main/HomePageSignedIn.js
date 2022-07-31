@@ -1,10 +1,54 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import BlogContentCard from './BlogContentCard';
 import './HomePageSignedIn.css';
 
-function HomePageSignedIn(props) {
+function HomePageSignedIn({ LogInJwt }) {
+	let navigate = useNavigate();
+	const [currentBlogs, setCurrentBlogs] = useState([]);
+
+	//fetch all the blogs
+	const getBlogs = async () => {
+		try {
+			const res = await axios.get(`http://localhost:8080/blogs`, {
+				headers: { Authorization: `Bearer ${LogInJwt}` },
+			});
+			let data = res.data;
+			setCurrentBlogs(data.reverse());
+			console.log(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	useEffect(() => {
+		getBlogs();
+	}, []);
+
 	return (
 		<div className='main-container'>
-			<p className='text default-font home-title'>A blog for all of your moving needs</p>
-			<ul className='blog-container'>
+			<p className='text default-font home-title'>
+				A blog for all of your moving needs
+			</p>
+
+			{currentBlogs.map((blogs) => {
+				return (
+					<BlogContentCard
+						id={blogs.id}
+						title={blogs.title}
+						summary={blogs.summary}
+						content={blogs.content}
+						category={blogs.category}
+						imageUrl={blogs.imageUrl}
+						getBlogs={getBlogs}
+						// votes={post.votes}
+						key={blogs.id}
+					/>
+				);
+			})}
+
+			{/* <ul className='blog-container'>
 				<li className='blog-card'>
 					<div className='img-container'>
 						<img
@@ -95,7 +139,7 @@ function HomePageSignedIn(props) {
 						</div>
 					</div>
 				</li>
-			</ul>
+			</ul> */}
 		</div>
 	);
 }
