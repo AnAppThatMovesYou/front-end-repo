@@ -13,6 +13,7 @@ import FooterSignedOut from './Components/Footer/FooterSignedOut';
 import FooterSignedIn from './Components/Footer/FooterSignedIn';
 import SignUpForm from './Components/Main/SignUpForm';
 import SignInForm from './Components/Main/SignInForm';
+import CreateBlog from './Components/Main/CreateBlog';
 
 function App() {
 	// INITIAL STATE SETUPS
@@ -81,6 +82,7 @@ function App() {
 					/>
 					<Route path='/about' element={<About />} />
 					<Route path='blog/:details' element={<BlogDetails />} />
+					<Route path='/createblog' element={<CreateBlog logIn={logIn} />} />
 				</Routes>
 			</main>
 			<footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer>

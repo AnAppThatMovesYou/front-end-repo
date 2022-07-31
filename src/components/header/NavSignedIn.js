@@ -1,4 +1,4 @@
-import './Header.css'
+import './Header.css';
 
 function NavSignedIn(props) {
 	return (
@@ -30,7 +30,7 @@ function NavSignedIn(props) {
 								</a>
 							</li>
 							<li class='nav-item'>
-								<a class='nav-link' href='#'>
+								<a class='nav-link' href='/createblog'>
 									Create Blog
 								</a>
 							</li>
