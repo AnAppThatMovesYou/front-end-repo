@@ -1,9 +1,11 @@
 .details-container {
+    width: 100vw;
     max-width: 60rem;
 }
 
 .blog-category {
     font-size: 1.4rem;
+    font-weight: 500;
 }
 
 .blog-title {
@@ -15,11 +17,13 @@
     text-align: center;
     font-weight: 500;
     max-width: 50rem;
+    font-style: italic;
 }
 
 .image-container {
     height: 20rem;
-    width: 60rem;
+    width: 96vw;
+    max-width: 50rem;
 }
 
 img {
@@ -28,4 +32,6 @@ img {
 
 .blog-content {
     font-size: 1.2rem;
+    max-width: 50rem;
+    text-align: justify;
 }
