@@ -24,7 +24,7 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 	return (
 		<div>
 			<nav class='navbar navbar-expand-lg navbar-light bg-light signed-out'>
-				<div class='container-fluid'>
+				<div class='container-fluid real-navbar'>
 					<Link class='navbar-brand' to='/home'>
 						<img
 							src={require('../../images/MovingCo-logos_transparent.png')}
