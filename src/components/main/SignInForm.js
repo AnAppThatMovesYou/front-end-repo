@@ -1,47 +1,49 @@
-import './Form.css'
+import './Form.css';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function SignInForm({ logIn, setLogIn, signUpJwt, setLogInJwt, logInJwt}) {
+function SignInForm({
+	logIn,
+	setLogIn,
+	signUpJwt,
+	setLogInJwt,
+	logInJwt,
+	signedIn,
+	setSignedIn,
+}) {
 	const navigate = useNavigate();
 
-		function handleChange(event) {
-			setLogIn({
-				...logIn,
-				[event.target.id]: event.target.value,
-			});
-		}
+	function handleChange(event) {
+		setLogIn({
+			...logIn,
+			[event.target.id]: event.target.value,
+		});
+	}
 
-		const handleSubmit = async (event) => {
-			event.preventDefault();
-			// await setLogIn(logIn);
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		// await setLogIn(logIn);
 
-			try {
-				const response = await axios.post(
-					'http://localhost:8080/login',
-					logIn);
+		try {
+			const response = await axios.post('http://localhost:8080/login', logIn);
 
-				console.log("RESPONSE",response);
-				setLogInJwt(response.data.token);
-				
-				
+			console.log('RESPONSE', response);
+			setLogInJwt(response.data.token);
 
-				if (response.status === 200) {
-					navigate('/home');
-				}
-
-			} catch (error) {
-				console.log(error);
+			if (response.status === 200) {
+				setSignedIn(true);
+				navigate('/home');
 			}
-		};
-	
-	
-	
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	return (
 		<div>
 			<div className='signup-form container-fluid d-flex justify-content-center align-items-center'>
-				<form className='form form-group' onSubmit= {handleSubmit}>
+				<form className='form form-group' onSubmit={handleSubmit}>
 					<h1 className='default-font position-relative mb-3 text-center'>
 						Log In!
 					</h1>

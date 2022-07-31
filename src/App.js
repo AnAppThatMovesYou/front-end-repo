@@ -59,6 +59,8 @@ function App() {
 								initialSignUp={initialSignUp}
 								signUpJwt={signUpJwt}
 								setSignUpJwt={setSignUpJwt}
+								signedIn={signedIn}
+								setSignedIn={setSignedIn}
 							/>
 						}
 					/>
@@ -72,6 +74,8 @@ function App() {
 								LogInJwt={LogInJwt}
 								setLogInJwt={setLogInJwt}
 								signUpJwt={signUpJwt}
+								signedIn={signedIn}
+								setSignedIn={setSignedIn}
 							/>
 						}
 					/>
