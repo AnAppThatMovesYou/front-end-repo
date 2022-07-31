@@ -1,4 +1,4 @@
-import './BlogDetails.css'
+import './BlogDetails.css';
 
 function BlogDetails({ summary, content, title, imageUrl, category }) {
 	return (

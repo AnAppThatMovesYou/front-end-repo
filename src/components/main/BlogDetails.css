@@ -3,6 +3,18 @@
     max-width: 60rem;
 }
 
+.edit-delete {
+    display: flex;
+    justify-content: flex-end;
+    width: 98vw;
+}
+
+.details-btn {
+    width: fit-content;
+    font-size: 0.8rem;
+    margin: 0.2rem;
+}
+
 .blog-category {
     font-size: 1.4rem;
     font-weight: 500;
