@@ -58,9 +58,9 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 						/>
 					</div>
 					<div>
-						<span className='blog-category'>Category</span>
-						<div className='blog-title'>Blog title</div>
-						<div className='blog-description'>
+						<span className='blog-category-in'>Category</span>
+						<div className='blog-title-in'>Blog title</div>
+						<div className='blog-description-in'>
 							Blog description, dolor sit amet consectetur adipisicing elit.
 						</div>
 					</div>
@@ -73,9 +73,9 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 						/>
 					</div>
 					<div>
-						<span className='blog-category'>Category</span>
-						<div className='blog-title'>Blog title</div>
-						<div className='blog-description'>
+						<span className='blog-category-in'>Category</span>
+						<div className='blog-title-in'>Blog title</div>
+						<div className='blog-description-in'>
 							Blog description, dolor sit amet consectetur adipisicing elit.
 						</div>
 					</div>
@@ -88,9 +88,9 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 						/>
 					</div>
 					<div>
-						<span className='blog-category'>Category</span>
-						<div className='blog-title'>Blog title</div>
-						<div className='blog-description'>
+						<span className='blog-category-in'>Category</span>
+						<div className='blog-title-in'>Blog title</div>
+						<div className='blog-description-in'>
 							Blog description, dolor sit amet consectetur adipisicing elit.
 						</div>
 					</div>
@@ -103,9 +103,9 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 						/>
 					</div>
 					<div>
-						<span className='blog-category'>Category</span>
-						<div className='blog-title'>Blog title</div>
-						<div className='blog-description'>
+						<span className='blog-category-in'>Category</span>
+						<div className='blog-title-in'>Blog title</div>
+						<div className='blog-description-in'>
 							Blog description, dolor sit amet consectetur adipisicing elit.
 						</div>
 					</div>
@@ -118,9 +118,9 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 						/>
 					</div>
 					<div>
-						<span className='blog-category'>Category</span>
-						<div className='blog-title'>Blog title</div>
-						<div className='blog-description'>
+						<span className='blog-category-in'>Category</span>
+						<div className='blog-title-in'>Blog title</div>
+						<div className='blog-description-in'>
 							Blog description, dolor sit amet consectetur adipisicing elit.
 						</div>
 					</div>
@@ -133,9 +133,9 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 						/>
 					</div>
 					<div>
-						<span className='blog-category'>Category</span>
-						<div className='blog-title'>Blog title</div>
-						<div className='blog-description'>
+						<span className='blog-category-in'>Category</span>
+						<div className='blog-title-in'>Blog title</div>
+						<div className='blog-description-in'>
 							Blog description, dolor sit amet consectetur adipisicing elit.
 						</div>
 					</div>
