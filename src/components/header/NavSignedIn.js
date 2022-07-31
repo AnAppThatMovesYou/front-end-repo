@@ -15,6 +15,12 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 			navigate('/about');
 		}
 	}
+
+	function handleSignedOut(event) {
+		event.preventDefault();
+		setSignedIn(false);
+		navigate('/');
+	}
 	return (
 		<div>
 			<nav class='navbar navbar-expand-lg navbar-light bg-light signed-out'>
@@ -63,6 +69,15 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 									id='about'
 									onClick={handleSignedin}>
 									About
+								</a>
+							</li>
+							<li className='nav-item'>
+								<a
+									href=''
+									className='nav-link'
+									id='signout'
+									onClick={handleSignedOut}>
+									Sign out
 								</a>
 							</li>
 						</ul>
