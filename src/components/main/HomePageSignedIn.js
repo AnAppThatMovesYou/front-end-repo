@@ -4,9 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import BlogContentCard from './BlogContentCard';
 import './HomePageSignedIn.css';
 
-function HomePageSignedIn({ LogInJwt }) {
+function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 	let navigate = useNavigate();
-	const [currentBlogs, setCurrentBlogs] = useState([]);
 
 	//fetch all the blogs
 	const getBlogs = async () => {
@@ -34,17 +33,19 @@ function HomePageSignedIn({ LogInJwt }) {
 
 			{currentBlogs.map((blogs) => {
 				return (
-					<BlogContentCard
-						id={blogs.id}
-						title={blogs.title}
-						summary={blogs.summary}
-						content={blogs.content}
-						category={blogs.category}
-						imageUrl={blogs.imageUrl}
-						getBlogs={getBlogs}
-						// votes={post.votes}
-						key={blogs.id}
-					/>
+					<a href='/details'>
+						<BlogContentCard
+							id={blogs.id}
+							title={blogs.title}
+							summary={blogs.summary}
+							content={blogs.content}
+							category={blogs.category}
+							imageUrl={blogs.imageUrl}
+							getBlogs={getBlogs}
+							// votes={post.votes}
+							key={blogs.id}
+						/>
+					</a>
 				);
 			})}
 

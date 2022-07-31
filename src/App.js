@@ -44,6 +44,9 @@ function App() {
 	const [logIn, setLogIn] = useState(initialLogIn);
 	const [LogInJwt, setLogInJwt] = useState('');
 
+	// State for all the current blogs
+	const [currentBlogs, setCurrentBlogs] = useState([]);
+
 	return (
 		<div className='bg-color'>
 			<header>
@@ -58,7 +61,13 @@ function App() {
 					<Route path='/' element={<HomePageSignedOut />} />
 					<Route
 						path='/home'
-						element={<HomePageSignedIn LogInJwt={LogInJwt} />}
+						element={
+							<HomePageSignedIn
+								LogInJwt={LogInJwt}
+								currentBlogs={currentBlogs}
+								setCurrentBlogs={setCurrentBlogs}
+							/>
+						}
 					/>
 					<Route
 						path='/signup'
@@ -90,7 +99,15 @@ function App() {
 						}
 					/>
 					<Route path='/about' element={<About />} />
-					<Route path='blog/:details' element={<BlogDetails />} />
+					<Route
+						path='/details'
+						element={
+							<BlogDetails
+								currentBlogs={currentBlogs}
+								setCurrentBlogs={setCurrentBlogs}
+							/>
+						}
+					/>
 					<Route
 						path='/createblog'
 						element={<CreateBlog logIn={logIn} LogInJwt={LogInJwt} />}
