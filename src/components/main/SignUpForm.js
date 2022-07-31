@@ -19,7 +19,7 @@ function SignUpForm({ signUp, setSignUp, initialSignUp }) {
 
 		try {
 			const response = await axios.post('http://localhost:8080/signup', signUp);
-			console.log(response);
+			console.log("RESPONSE",response);
 
 			if (response.status === 200) {
 				navigate('/home');
@@ -35,19 +35,19 @@ function SignUpForm({ signUp, setSignUp, initialSignUp }) {
 					Sign Up!
 				</h1>
 				<input
-					id='Username'
+					id='username'
 					type='text'
 					className='form-control position-relative mb-1 input'
 					placeholder='Username'
-					value={signUp.Username}
+					value={signUp.username}
 					onChange={handleChange}
 				/>
 				<input
-					id='Password'
+					id='password'
 					type='password'
 					className='form-control position-relative mb-1 input'
 					placeholder='Password'
-					value={signUp.Password}
+					value={signUp.password}
 					onChange={handleChange}
 				/>
 

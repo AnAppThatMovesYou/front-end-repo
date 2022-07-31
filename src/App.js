@@ -19,17 +19,29 @@ function App() {
 
 	// Initial Sign Up State:
 	const initialSignUp = {
-		Username: '',
-		Password: '',
+		username: '',
+		password: '',
 		user_role: {
 			name: 'ROLE_USER',
 		},
 	};
 
+	// Initial Log in State:
+	const initialLogIn = {
+		username: '',
+		password: '',
+	};
+
 	// STATE SET UPS
 	const [signedIn, setSignedIn] = useState(false);
+
+	// All states associated with signUp
 	const [signUp, setSignUp] = useState(initialSignUp);
 	const [signUpJwt, setSignUpJwt] = useState('');
+
+	// All states associated with LogIn
+	const [logIn, setLogIn] = useState(initialLogIn);
+	const [LogInJwt, setLogInJwt] = useState('');
 
 	return (
 		<div className='bg-color'>
@@ -46,11 +58,23 @@ function App() {
 								setSignUp={setSignUp}
 								initialSignUp={initialSignUp}
 								signUpJwt={signUpJwt}
-								setSignUpJwt={signUpJwt}
+								setSignUpJwt={setSignUpJwt}
 							/>
 						}
 					/>
-					<Route path='/signin' element={<SignInForm />} />
+					<Route
+						path='/signin'
+						element={
+							<SignInForm
+								logIn={logIn}
+								setLogIn={setLogIn}
+								initialLogIn={initialLogIn}
+								LogInJwt={LogInJwt}
+								setLogInJwt={setLogInJwt}
+								signUpJwt={signUpJwt}
+							/>
+						}
+					/>
 					<Route path='/about' element={<About />} />
 					<Route path='blog/:details' element={<BlogDetails />} />
 				</Routes>
