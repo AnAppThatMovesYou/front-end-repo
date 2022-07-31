@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../Main/CreateBlog.css';
 
-function CreateBlog({ logIn }) {
+function CreateBlog({ logIn, LogInJwt }) {
 	const navigate = useNavigate();
 	const initialBlogState = {
 		title: '',
@@ -20,24 +20,26 @@ function CreateBlog({ logIn }) {
 	}
 
 	const handleSubmit = async (event) => {
-		// event.preventDefault();
-		// try {
-		// 	const response = await axios.post(
-		// 		'https://localhost:8080/:username',
-		// 		blogState
-		// 	);
-		// 	if (response.status === 201) {
-		// 		navigate('/');
-		// 	}
-		// } catch (error) {
-		// 	console.log(error);
-		// }
-		// console.log(logIn);
+		event.preventDefault();
+		try {
+			const response = await axios.post(
+				`http://localhost:8080/blogs/${logIn.username}`,
+				blogState,
+				{
+					headers: { Authorization: `Bearer ${LogInJwt}`, Test: 'hello' },
+				}
+			);
+			if (response.status === 200) {
+				navigate('/home');
+			}
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	function handleCancel(event) {
 		event.preventDefault();
-		navigate('/');
+		navigate('/home');
 	}
 	return (
 		<div className='d-flex flex-column p-3 gap-3 create-blog-container'>
@@ -81,8 +83,8 @@ function CreateBlog({ logIn }) {
 					id='category'
 					name='Category'
 					className='form-control position-relative mb-1 input'>
-					value={blogState.category}
-					onChange={handleChange}
+					{/* value={blogState.category} */}
+					{/* onChange={handleChange} */}
 					<option>Your blog's category</option>
 					<option value={'Moving Tips'}>Moving Tips</option>
 					<option value={'Moving Feelings'}>Moving Feelings</option>
@@ -90,10 +92,10 @@ function CreateBlog({ logIn }) {
 				</select>
 				<div className='button-container'>
 					<div className='d-flex flex-row'>
-						<button className='btn w-50' type='submit'>
+						<button className='btn w-50' type='button' onClick={handleCancel}>
 							Cancel
 						</button>
-						<button className='btn w-50' type='button' onClick={handleCancel}>
+						<button className='btn w-50' type='submit'>
 							Post Blog!
 						</button>
 					</div>

@@ -46,7 +46,13 @@ function App() {
 
 	return (
 		<div className='bg-color'>
-			<header>{signedIn ? <NavSignedIn /> : <NavSignedOut />}</header>
+			<header>
+				{signedIn ? (
+					<NavSignedIn signedIn={signedIn} setSignedIn={setSignedIn} />
+				) : (
+					<NavSignedOut signedIn={signedIn} />
+				)}
+			</header>
 			<main>
 				<Routes>
 					<Route path='/' element={<HomePageSignedOut />} />
@@ -82,7 +88,10 @@ function App() {
 					/>
 					<Route path='/about' element={<About />} />
 					<Route path='blog/:details' element={<BlogDetails />} />
-					<Route path='/createblog' element={<CreateBlog logIn={logIn} />} />
+					<Route
+						path='/createblog'
+						element={<CreateBlog logIn={logIn} LogInJwt={LogInJwt} />}
+					/>
 				</Routes>
 			</main>
 			<footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer>
