@@ -21,7 +21,7 @@ function App() {
 	const initialSignUp = {
 		username: '',
 		password: '',
-		user_role: {
+		userRole: {
 			name: 'ROLE_USER',
 		},
 	};

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function SignInForm({ logIn, setLogIn, initialLogIn, signUpJwt}) {
+function SignInForm({ logIn, setLogIn, signUpJwt, setLogInJwt, logInJwt}) {
 	const navigate = useNavigate();
 
 		function handleChange(event) {
@@ -15,21 +15,22 @@ function SignInForm({ logIn, setLogIn, initialLogIn, signUpJwt}) {
 
 		const handleSubmit = async (event) => {
 			event.preventDefault();
-			await setLogIn(logIn);
+			// await setLogIn(logIn);
 
 			try {
 				const response = await axios.post(
-					'http://localhost:8080/logIn',
-					logIn, headers : {
-						'Authorization': signUpJwt
-					}
+					'http://localhost:8080/login',
+					logIn);
 
-				);
 				console.log("RESPONSE",response);
+				setLogInJwt(response.data.token);
+				
+				
 
 				if (response.status === 200) {
 					navigate('/home');
 				}
+
 			} catch (error) {
 				console.log(error);
 			}
@@ -40,7 +41,7 @@ function SignInForm({ logIn, setLogIn, initialLogIn, signUpJwt}) {
 	return (
 		<div>
 			<div className='signup-form container-fluid d-flex justify-content-center align-items-center'>
-				<form className='form form-group'>
+				<form className='form form-group' onSubmit= {handleSubmit}>
 					<h1 className='default-font position-relative mb-3 text-center'>
 						Log In!
 					</h1>
