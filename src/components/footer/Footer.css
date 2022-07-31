@@ -1,10 +1,12 @@
 .footer {
     background-color: rgb(40, 40, 40);
     color: white;
+    width: 100vw;
 }
 
 .footer-slogan {
     color: rgb( 57, 57, 57);
+    line-height: 5rem;
 }
 
 .links-container {
@@ -22,4 +24,14 @@
 
 .text {
     font-size: 5rem;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 1rem;
+    }
 }
