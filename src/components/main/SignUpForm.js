@@ -69,8 +69,7 @@ function SignUpForm({
 				<div className='button-container'>
 					<div className='d-flex flex-row'>
 						<button className='btn w-50' type='button'>
-							<p className='signup-text'>Already have an account? </p>
-							<p>Sign in!</p>
+							<p className='signup-text'>Already have an account?</p>
 						</button>
 						<button className='btn w-50' type='submit'>
 							Sign Up
