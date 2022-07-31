@@ -6,7 +6,7 @@ function FooterSignedIn(props) {
 			<section className=''>
 				<div className='d-flex justify-content-center gap-for-footer'>
 					<div className='w-60'>
-						<a class='navbar-brand' href='#'>
+						<a className='navbar-brand' href='#'>
 							<img
 								src={require('../../images/MovingCoFooter.png')}
 								alt=''

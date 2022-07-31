@@ -1,30 +1,65 @@
 import './Form.css';
+import { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-function SignUpForm(props) {
+function SignUpForm({ signUp, setSignUp, signUpJwt, setSignUpJwt }) {
+	const navigate = useNavigate();
+
+	function handleChange(event) {
+		setSignUp({
+			...signUp,
+			[event.target.id]: event.target.value,
+		});
+	}
+
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		await setSignUp(signUp);
+
+		try {
+			const response = await axios.post('http://localhost:8080/signup', signUp);
+			console.log('RESPONSE', response);
+			
+			
+
+			if (response.status === 200) {
+				// setSignUpJwt(response.data.token);
+				navigate('/signin');
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	return (
 		<div className='signup-form container-fluid d-flex justify-content-center align-items-center'>
-			<form className='form form-group'>
-				<h1 className='default-font position-relative mb-3 text-center'>Sign Up!</h1>
+			<form className='form form-group' onSubmit={handleSubmit}>
+				<h1 className='default-font position-relative mb-3 text-center'>
+					Sign Up!
+				</h1>
 				<input
+					id='username'
 					type='text'
 					className='form-control position-relative mb-1 input'
-                    placeholder='First Name'
+					placeholder='Username'
+					value={signUp.username}
+					onChange={handleChange}
 				/>
 				<input
-					type='text'
+					id='password'
+					type='password'
 					className='form-control position-relative mb-1 input'
-                    placeholder='Last Name'
+					placeholder='Password'
+					value={signUp.password}
+					onChange={handleChange}
 				/>
-				<input
+
+				{/* <input
 					type='email'
 					className='form-control position-relative mb-1 input'
                     placeholder='Email'
-				/>
-				<input
-					type='password'
-					className='form-control position-relative mb-1 input'
-                    placeholder='Password'
-				/>
+				/> */}
+
 				<div className='button-container'>
 					<div className='d-flex flex-row'>
 						<button className='btn w-50' type='button'>
