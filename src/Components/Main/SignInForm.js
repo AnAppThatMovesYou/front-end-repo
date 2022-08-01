@@ -32,6 +32,7 @@ function SignInForm({
 			setLogInJwt(response.data.token);
 
 			localStorage.setItem('LogInJwt', response.data.token);
+			localStorage.setItem('logInUsername', logIn.username);
 			if (response.status === 200) {
 				setSignedIn(true);
 				navigate('/home');

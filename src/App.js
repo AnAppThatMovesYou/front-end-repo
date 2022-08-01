@@ -49,6 +49,7 @@ function App() {
 
 	// State for all the current blogs
 	const [currentBlogs, setCurrentBlogs] = useState([]);
+	const [blogDetails, setBlogDetails] = useState({});
 
 	
 	return (
@@ -106,9 +107,9 @@ function App() {
 					<Route
 						path='/details/:id'
 						element={
-							<BlogContentCard
-								currentBlogs={currentBlogs}
-								setCurrentBlogs={setCurrentBlogs}
+							<BlogDetails
+								LogInJwt={LogInJwt}
+
 							/>
 						}
 					/>
