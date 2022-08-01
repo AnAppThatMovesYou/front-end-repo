@@ -7,6 +7,8 @@ import './HomePageSignedIn.css';
 function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 	let navigate = useNavigate();
 
+	const [blogDetails, setBlogDetails]= useState({})
+
 	//fetch all the blogs
 	const getBlogs = async () => {
 		try {
@@ -27,6 +29,7 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 		getBlogs();
 	}, []);
 
+	
 	return (
 		<div className='main-container'>
 			<p className='text default-font home-title'>
@@ -35,7 +38,11 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 
 			{currentBlogs.map((blogs) => {
 				return (
-					<a href='/details'>
+					<div className= "blog-content-card" onClick={async (event)=> {
+						event.preventDefault();
+						navigate(`/details/${blogs.id}`)
+						
+					}}>
 						<BlogContentCard
 							id={blogs.id}
 							title={blogs.title}
@@ -47,7 +54,7 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 							// votes={post.votes}
 							key={blogs.id}
 						/>
-					</a>
+					</div>
 				);
 			})}
 

@@ -14,6 +14,7 @@ import FooterSignedIn from './Components/Footer/FooterSignedIn';
 import SignUpForm from './Components/Main/SignUpForm';
 import SignInForm from './Components/Main/SignInForm';
 import CreateBlog from './Components/Main/CreateBlog';
+import BlogContentCard from './Components/Main/BlogContentCard';
 
 function App() {
 	// INITIAL STATE SETUPS
@@ -103,9 +104,9 @@ function App() {
 					/>
 					<Route path='/about' element={<About />} />
 					<Route
-						path='/details'
+						path='/details/:id'
 						element={
-							<BlogDetails
+							<BlogContentCard
 								currentBlogs={currentBlogs}
 								setCurrentBlogs={setCurrentBlogs}
 							/>
