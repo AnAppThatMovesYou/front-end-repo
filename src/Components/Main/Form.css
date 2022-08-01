@@ -38,8 +38,7 @@
     color: rgb(42, 42, 42) !important;
     font-weight: 900;
     background-color: inherit;
-    max-height: 5rem;
-    line-height: 1;
+    max-height: 4rem;
     border: solid black 2px;
 }
 

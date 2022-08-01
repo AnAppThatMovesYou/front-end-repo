@@ -29,8 +29,9 @@ function SignUpForm({
 			console.log('RESPONSE', response);
 
 			if (response.status === 200) {
-				// setSignUpJwt(response.data.token);
+				setSignUpJwt(response.data.token);
 				setSignedIn(true);
+				localStorage.setItem('LogInJwt', response.data.token);
 				navigate('/signin');
 			}
 		} catch (error) {
@@ -69,8 +70,7 @@ function SignUpForm({
 				<div className='button-container'>
 					<div className='d-flex flex-row'>
 						<button className='btn w-50' type='button'>
-							<p className='signup-text'>Already have an account? </p>
-							<p>Sign in!</p>
+							<p className='signup-text'>Already have an account?</p>
 						</button>
 						<button className='btn w-50' type='submit'>
 							Sign Up

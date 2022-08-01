@@ -1,6 +1,6 @@
 //installing react related modules
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // importing all of the components
 import NavSignedIn from './Components/Header/NavSignedIn';
@@ -14,6 +14,7 @@ import FooterSignedIn from './Components/Footer/FooterSignedIn';
 import SignUpForm from './Components/Main/SignUpForm';
 import SignInForm from './Components/Main/SignInForm';
 import CreateBlog from './Components/Main/CreateBlog';
+import BlogContentCard from './Components/Main/BlogContentCard';
 
 function App() {
 	// INITIAL STATE SETUPS
@@ -34,7 +35,9 @@ function App() {
 	};
 
 	// STATE SET UPS
-	const [signedIn, setSignedIn] = useState(false);
+	const [signedIn, setSignedIn] = useState(
+		localStorage.getItem('LogInJwt') || false
+	);
 
 	// All states associated with signUp
 	const [signUp, setSignUp] = useState(initialSignUp);
@@ -44,6 +47,11 @@ function App() {
 	const [logIn, setLogIn] = useState(initialLogIn);
 	const [LogInJwt, setLogInJwt] = useState('');
 
+	// State for all the current blogs
+	const [currentBlogs, setCurrentBlogs] = useState([]);
+	const [blogDetails, setBlogDetails] = useState({});
+
+	
 	return (
 		<div className='bg-color'>
 			<header>
@@ -56,7 +64,16 @@ function App() {
 			<main>
 				<Routes>
 					<Route path='/' element={<HomePageSignedOut />} />
-					<Route path='/home' element={<HomePageSignedIn />} />
+					<Route
+						path='/home'
+						element={
+							<HomePageSignedIn
+								LogInJwt={LogInJwt}
+								currentBlogs={currentBlogs}
+								setCurrentBlogs={setCurrentBlogs}
+							/>
+						}
+					/>
 					<Route
 						path='/signup'
 						element={
@@ -87,7 +104,15 @@ function App() {
 						}
 					/>
 					<Route path='/about' element={<About />} />
-					<Route path='blog/:details' element={<BlogDetails />} />
+					<Route
+						path='/details/:id'
+						element={
+							<BlogDetails
+								LogInJwt={LogInJwt}
+
+							/>
+						}
+					/>
 					<Route
 						path='/createblog'
 						element={<CreateBlog logIn={logIn} LogInJwt={LogInJwt} />}

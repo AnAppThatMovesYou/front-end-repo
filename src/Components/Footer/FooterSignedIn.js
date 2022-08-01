@@ -4,7 +4,7 @@ function FooterSignedIn(props) {
 	return (
 		<div className='container-fluid footer p-4 pb-0'>
 			<section className=''>
-				<div className='d-flex justify-content-center gap-for-footer'>
+				<div className='d-flex justify-content-center gap-for-footer footer-content'>
 					<div className='w-60'>
 						<a className='navbar-brand' href='#'>
 							<img

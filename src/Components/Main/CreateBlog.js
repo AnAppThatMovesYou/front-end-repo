@@ -23,7 +23,7 @@ function CreateBlog({ logIn, LogInJwt }) {
 		event.preventDefault();
 		try {
 			const response = await axios.post(
-				`http://localhost:8080/blogs/${logIn.username}`,
+				`http://localhost:8080/blogs/${localStorage.getItem('logInUsername')}`,
 				blogState,
 				{
 					headers: { Authorization: `Bearer ${LogInJwt}`, Test: 'hello' },

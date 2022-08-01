@@ -17,3 +17,7 @@ header {
     font-size: 1.5rem;
     box-shadow: none !important;
 }
+
+.real-navbar {
+    width: 100vw;
+}
