@@ -1,6 +1,6 @@
 //installing react related modules
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // importing all of the components
 import NavSignedIn from './Components/Header/NavSignedIn';
@@ -49,6 +49,7 @@ function App() {
 	// State for all the current blogs
 	const [currentBlogs, setCurrentBlogs] = useState([]);
 
+	
 	return (
 		<div className='bg-color'>
 			<header>
