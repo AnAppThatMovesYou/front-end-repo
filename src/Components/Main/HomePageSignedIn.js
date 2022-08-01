@@ -11,7 +11,9 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 	const getBlogs = async () => {
 		try {
 			const res = await axios.get(`http://localhost:8080/blogs`, {
-				headers: { Authorization: `Bearer ${LogInJwt}` },
+				headers: {
+					Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
+				},
 			});
 			let data = res.data;
 			setCurrentBlogs(data.reverse());

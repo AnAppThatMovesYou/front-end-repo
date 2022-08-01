@@ -29,8 +29,9 @@ function SignUpForm({
 			console.log('RESPONSE', response);
 
 			if (response.status === 200) {
-				// setSignUpJwt(response.data.token);
+				setSignUpJwt(response.data.token);
 				setSignedIn(true);
+				localStorage.setItem('LogInJwt', response.data.token);
 				navigate('/signin');
 			}
 		} catch (error) {

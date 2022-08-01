@@ -34,7 +34,9 @@ function App() {
 	};
 
 	// STATE SET UPS
-	const [signedIn, setSignedIn] = useState(false);
+	const [signedIn, setSignedIn] = useState(
+		localStorage.getItem('LogInJwt') || false
+	);
 
 	// All states associated with signUp
 	const [signUp, setSignUp] = useState(initialSignUp);

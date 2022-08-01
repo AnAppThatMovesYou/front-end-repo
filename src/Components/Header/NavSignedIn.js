@@ -19,6 +19,7 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 	function handleSignedOut(event) {
 		event.preventDefault();
 		setSignedIn(false);
+		localStorage.removeItem('LogInJwt');
 		navigate('/');
 	}
 	return (

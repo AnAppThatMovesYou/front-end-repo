@@ -31,6 +31,7 @@ function SignInForm({
 			console.log('RESPONSE', response);
 			setLogInJwt(response.data.token);
 
+			localStorage.setItem('LogInJwt', response.data.token);
 			if (response.status === 200) {
 				setSignedIn(true);
 				navigate('/home');
