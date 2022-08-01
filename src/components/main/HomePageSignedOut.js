@@ -13,9 +13,9 @@ function HomePageSignedOut(props) {
 	}
 
 	return (
-		<div className='container d-flex flex-column justify-content-center pb-5'>
+		<div className='container d-flex flex-column justify-content-center pb-5 gap-5'>
 			<div className='container-fluid w-100'>
-				<p className='default-font text'>
+				<p className='playfair text-out'>
 					An App
 					<br />
 					That
@@ -24,7 +24,7 @@ function HomePageSignedOut(props) {
 				</p>
 				<div className='w-40'></div>
 			</div>
-			<div className='container-fluid text-center'>
+			<div className='container-fluid text-center vollkorn btn-container'>
 				<button onClick={handleSignup} className='btn'>
 					Sign Up
 				</button>

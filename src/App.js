@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 
 // importing all of the components
+<<<<<<< HEAD
 import NavSignedIn from './Components/Header/NavSignedIn';
 import NavSignedOut from './Components/Header/NavSignedOut';
 import About from './Components/Main/About';
@@ -14,6 +15,19 @@ import FooterSignedIn from './Components/Footer/FooterSignedIn';
 import SignUpForm from './Components/Main/SignUpForm';
 import SignInForm from './Components/Main/SignInForm';
 import CreateBlog from './Components/Main/CreateBlog';
+=======
+import NavSignedIn from './components/Header/NavSignedIn';
+import NavSignedOut from './components/Header/NavSignedOut';
+import About from './components/Main/About';
+import HomePageSignedOut from './components/Main/HomePageSignedOut';
+import HomePageSignedIn from './components/Main/HomePageSignedIn'
+import BlogDetails from './components/Main/BlogDetails'
+import FooterSignedOut from './components/Footer/FooterSignedOut';
+import FooterSignedIn from './components/Footer/FooterSignedIn';
+import SignUpForm from './components/Main/SignUpForm';
+import SignInForm from './components/Main/SignInForm';
+import CreateBlog from './components/Main/CreateBlog'
+>>>>>>> 9d59fbe (Create edit and delete buttons for BlogDetails.js. Create CreateBlog.js and hook up route in App.js.)
 
 function App() {
 	// INITIAL STATE SETUPS
@@ -99,6 +113,7 @@ function App() {
 						}
 					/>
 					<Route path='/about' element={<About />} />
+<<<<<<< HEAD
 					<Route
 						path='/details'
 						element={
@@ -112,6 +127,10 @@ function App() {
 						path='/createblog'
 						element={<CreateBlog logIn={logIn} LogInJwt={LogInJwt} />}
 					/>
+=======
+					<Route path='blog/details' element={<BlogDetails />} />
+					<Route path='blog/create' element={<CreateBlog/>}/>
+>>>>>>> 9d59fbe (Create edit and delete buttons for BlogDetails.js. Create CreateBlog.js and hook up route in App.js.)
 				</Routes>
 			</main>
 			<footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer>

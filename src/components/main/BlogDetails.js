@@ -1,4 +1,4 @@
-import React from 'react';
+import './BlogDetails.css';
 
 function BlogDetails({ summary, content, title, imageUrl, category }) {
 	return (
