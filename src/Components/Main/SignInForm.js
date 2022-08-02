@@ -11,6 +11,8 @@ function SignInForm({
 	logInJwt,
 	signedIn,
 	setSignedIn,
+	profile,
+	setProfile,
 }) {
 	const navigate = useNavigate();
 
@@ -35,7 +37,11 @@ function SignInForm({
 			localStorage.setItem('logInUsername', logIn.username);
 			if (response.status === 200) {
 				setSignedIn(true);
-				navigate('/home');
+				if (profile.email) {
+					navigate('/home');
+				} else {
+					navigate('/createprofile');
+				}
 			}
 		} catch (error) {
 			console.log(error);

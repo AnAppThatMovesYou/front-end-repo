@@ -74,6 +74,15 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 							</li>
 							<li className='nav-item'>
 								<a
+									href='/profile'
+									className='nav-link'
+									id='about'
+									onClick={handleSignedin}>
+									Profile
+								</a>
+							</li>
+							<li className='nav-item'>
+								<a
 									href=''
 									className='nav-link'
 									id='signout'
