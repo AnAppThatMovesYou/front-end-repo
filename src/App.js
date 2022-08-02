@@ -138,6 +138,20 @@ function App() {
 						path='/editblog/:id'
 						element={<EditBlog LogInJwt={LogInJwt} />}
 					/>
+					<Route
+						path='/createprofile'
+						element={
+							<CreateProfile
+								profile={profile}
+								setProfile={setProfile}
+								setSignedIn={setSignedIn}
+							/>
+						}
+					/>
+					<Route
+						path='/profile'
+						element={<ViewProfile profile={profile} setProfile={setProfile} />}
+					/>
 				</Routes>
 			</main>
 			{/* <footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer> */}
