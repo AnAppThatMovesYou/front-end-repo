@@ -3,8 +3,8 @@
 }
 
 .create-blog-form {
-    max-height: 80vh !important;
-    width: 60vw;
+    max-height: 70vh !important;
+    width: 70vw;
     padding: 1rem;
     border: solid black;
     border-radius: 1rem;
@@ -26,4 +26,26 @@
 
 #content{
     height: 20em;
+}
+
+@media (max-width: 1000px) {
+    .create-blog-form {
+        max-height: 80vh !important;
+        width: 90vw;
+        padding: 1rem;
+        border: solid black;
+        border-radius: 1rem;
+        background-color: rgb(40, 40, 40);
+    }
+}
+
+@media (min-width: 1000px) {
+    .create-blog-form {
+        max-height: 80vh !important;
+        width: 55vw;
+        padding: 1rem;
+        border: solid black;
+        border-radius: 1rem;
+        background-color: rgb(40, 40, 40);
+    }
 }

@@ -45,30 +45,30 @@ function BlogDetails({ logInJwt }) {
 	// }
 	if (blogDetails) {
 		return (
-			<li className='blog-card'>
-				<h2> {blogDetails.title}</h2>
+			<li className='blog-card-details details-background'>
+				<h2 className='blog-title'> {blogDetails.title}</h2>
 
-				<div>{blogDetails.summary}</div>
+				<div className='blog-summary'>{blogDetails.summary}</div>
 
 				<div>
 					<img src={blogDetails.imgUrl} alt='image of family moving' />
 				</div>
 
-				<div>{blogDetails.content}</div>
+				<div className='blog-content'>{blogDetails.content}</div>
 
-				<div>Category: {`#${blogDetails.category}`}</div>
-
-				<button type='button' onClick={handleDelete}>
-					Delete Post
-				</button>
-				<button
-					type='button'
-					onClick={(event) => {
-						event.preventDefault();
-						navigate(`/editblog/${blogDetails.id}`);
-					}}>
-					Edit Post
-				</button>
+					<div>
+						<button type='button' onClick={handleDelete} className='details-btn btn'>
+							Delete Post
+						</button>
+						<button
+							type='button'
+							onClick={(event) => {
+								event.preventDefault();
+								navigate(`/editblog/${blogDetails.id}`);
+							}} className='details-btn btn'>
+							Edit Post
+						</button>
+					</div>
 			</li>
 		);
 	}

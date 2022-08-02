@@ -47,7 +47,7 @@
 }
 
 .btn {
-    color: rgb(255, 255, 255) !important;
+    color: rgb(255, 255, 255);
     font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
     background-color: inherit;
