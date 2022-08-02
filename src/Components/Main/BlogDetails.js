@@ -46,21 +46,21 @@ function BlogDetails({ logInJwt }) {
 	// }
 	if (blogDetails) {
 		return (
-			<li className='blog-card'>
-				<h2> {blogDetails.title}</h2>
+			<li className='blog-card-details details-background'>
+				<h2 className='blog-title'> {blogDetails.title}</h2>
 
-				<div>{blogDetails.summary}</div>
+				<div className='blog-summary'>{blogDetails.summary}</div>
 
 				<div>
 					<img src={blogDetails.imgUrl} alt='image of family moving' />
 				</div>
 
-				<div>{blogDetails.content}</div>
+				<div className='blog-content'>{blogDetails.content}</div>
 
 				<div>Category: {`#${blogDetails.category}`}</div>
 
 				{blogDetails.user.username === localStorage.getItem('logInUsername') ? (
-					<button type='button' onClick={handleDelete}>
+					<button type='button' className='details-btn btn' onClick={handleDelete}>
 						Delete Post
 					</button>
 				) : (
@@ -69,6 +69,7 @@ function BlogDetails({ logInJwt }) {
 				{blogDetails.user.username === localStorage.getItem('logInUsername') ? (
 					<button
 						type='button'
+						className='details-btn btn'
 						onClick={(event) => {
 							event.preventDefault();
 							navigate(`/editblog/${blogDetails.id}`);

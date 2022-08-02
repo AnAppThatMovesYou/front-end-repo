@@ -36,6 +36,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right 100% bottom 52%;
+  min-height: 100vh;
 }
 
 /* Basic Reset */
@@ -87,10 +88,6 @@ button {
 .logo{
   height: 2.3rem;
   width: auto;
-}
-
-.bg-color {
-  background-color: #edeae4;
 }
 
 .text-color {
