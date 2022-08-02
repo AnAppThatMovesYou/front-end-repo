@@ -1,9 +1,16 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-function NavSignedIn({ setSignedIn, signedIn }) {
+function NavSignedIn({ setSignedIn, signedIn, setInputQuery }) {
 	let navigate = useNavigate();
+
+	const initialFormState = {
+		input: '',
+	};
+	const [formState, setFormState] = useState(initialFormState);
+
 	function handleSignedin(event) {
 		event.preventDefault();
 		setSignedIn(true);
@@ -13,6 +20,8 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 			navigate('/home');
 		} else if (event.target.id === 'about') {
 			navigate('/about');
+		} else if (event.target.id === 'profile'){
+			navigate('/profile');
 		}
 	}
 
@@ -22,9 +31,14 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 		localStorage.removeItem('LogInJwt');
 		navigate('/');
 	}
+
+	function handleChange(event) {
+		setFormState({ ...formState, input: event.target.value });
+		setInputQuery(event.target.value);
+	}
 	return (
 		<div>
-			<nav class='navbar navbar-expand-lg navbar-light bg-light signed-out'>
+			<nav class='navbar navbar-expand-lg signed-in shadow-lg default-font'>
 				<div class='container-fluid real-navbar'>
 					<Link class='navbar-brand' to='/home'>
 						<img
@@ -33,6 +47,14 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 							className='logo'
 						/>
 					</Link>
+					<input
+						type='text'
+						name='search bar'
+						id='search-bar'
+						onChange={handleChange}
+						value={formState.input}
+					/>
+					<label htmlFor="search-bar">Search</label>
 					<button
 						class='navbar-toggler'
 						type='button'
@@ -70,6 +92,15 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 									id='about'
 									onClick={handleSignedin}>
 									About
+								</a>
+							</li>
+							<li className='nav-item'>
+								<a
+									href='/profile'
+									className='nav-link'
+									id='profile'
+									onClick={handleSignedin}>
+									Profile
 								</a>
 							</li>
 							<li className='nav-item'>

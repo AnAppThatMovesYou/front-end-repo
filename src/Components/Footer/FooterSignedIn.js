@@ -1,4 +1,5 @@
 import './Footer.css';
+import { SocialIcon } from 'react-social-icons';
 
 function FooterSignedIn(props) {
 	return (
@@ -16,7 +17,7 @@ function FooterSignedIn(props) {
 						<p className='default-font text footer-slogan'>
 							An App
 							<br />
-							That 
+							That
 							<br />
 							Moves You
 						</p>
@@ -26,17 +27,17 @@ function FooterSignedIn(props) {
 							<h5 className=''>Get Started</h5>
 							<ul className='list-unstyled mb-0'>
 								<li>
-									<a href='#!' className=''>
+									<a href='/signup' className=''>
 										Sign Up
 									</a>
 								</li>
 								<li>
-									<a href='#!' className=''>
+									<a href='/signin' className=''>
 										Sign In
 									</a>
 								</li>
 								<li>
-									<a href='#!' className=''>
+									<a href='/about' className=''>
 										About
 									</a>
 								</li>
@@ -44,23 +45,33 @@ function FooterSignedIn(props) {
 						</div>
 						<dir className='Contact-us'>
 							<h5 className=''>Contact Us</h5>
-							<ul className='list-unstyled mb-0'>
-								<li>
-									<a href='#!' className=''>
-										Sign Up
-									</a>
-								</li>
-								<li>
-									<a href='#!' className=''>
-										Sign In
-									</a>
-								</li>
-								<li>
+							{/* <ul className='list-unstyled mb-0'>
+								<li> */}
+							<div className='social-media-icons'>
+								<SocialIcon
+									className='social-icon'
+									url='https://github.com/AnAppThatMovesYou'
+									bgColor='#FFFFFF'
+									network='github'
+									target='_blank'
+								/>
+								{/* </li>
+								<li> */}
+								<SocialIcon
+									className='social-icon'
+									url='https://mailhide.io/e/PrcEGwC0'
+									bgColor='#FFFFFF'
+									network='email'
+									target='_blank'
+								/>
+								{/* </li> */}
+								{/* <li>
 									<a href='#!' className=''>
 										About
 									</a>
-								</li>
-							</ul>
+								</li> */}
+								{/* </ul> */}
+							</div>
 						</dir>
 					</div>
 				</div>

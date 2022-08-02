@@ -2,14 +2,18 @@ header {
     min-width: 100vw;
 }
 
+.signed-in {
+    background-color: white;
+}
+
 .nav-link {
-    color: rgb(74, 74, 74);
+    color: rgb(42, 42, 42);
     font-weight: 300;
     padding: 0.5rem;
 }
 
 .nav-link:hover {
-    color: black;
+    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 

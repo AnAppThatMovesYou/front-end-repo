@@ -11,6 +11,8 @@ function SignInForm({
 	logInJwt,
 	signedIn,
 	setSignedIn,
+	profile,
+	setProfile,
 }) {
 	const navigate = useNavigate();
 
@@ -26,7 +28,10 @@ function SignInForm({
 		await setLogIn(logIn);
 
 		try {
-			const response = await axios.post('http://localhost:8080/login', logIn);
+			const response = await axios.post(
+				'https://movingco.herokuapp.com/login',
+				logIn
+			);
 
 			console.log('RESPONSE', response);
 			setLogInJwt(response.data.token);
@@ -35,25 +40,36 @@ function SignInForm({
 			localStorage.setItem('logInUsername', logIn.username);
 			if (response.status === 200) {
 				setSignedIn(true);
-				navigate('/home');
+				if (profile.email) {
+					navigate('/home');
+				} else {
+					navigate('/createprofile');
+				}
 			}
 		} catch (error) {
 			console.log(error);
 		}
 	};
 
+	function handleSignup(event) {
+		event.preventDefault();
+		navigate('/signup');
+	}
+
 	return (
 		<div>
-			<div className='signup-form container-fluid d-flex justify-content-center align-items-center'>
-				<form className='form form-group' onSubmit={handleSubmit}>
+			<div className='signup-form container-fluid d-flex justify-content-center align-items-center align-items-center'>
+				<form
+					className='form form-group shadow-lg d-flex flex-column justify-content-center align-items-center gap-3'
+					onSubmit={handleSubmit}>
 					<h1 className='default-font position-relative mb-3 text-center'>
-						Log In!
+						Sign In
 					</h1>
 					<input
 						type='text'
 						id='username'
 						className='form-control position-relative mb-1 input'
-						placeholder='username'
+						placeholder='Username'
 						value={logIn.username}
 						onChange={handleChange}
 					/>
@@ -67,11 +83,10 @@ function SignInForm({
 					/>
 					<div className='button-container'>
 						<div className='d-flex flex-row'>
-							<button className='btn w-50' type='button'>
-								<p className='signup-text'>Don't have an account? </p>
-								<p>Sign Up</p>
+							<button className='btn w-50' type='button' onClick={handleSignup}>
+								<p className='signup-text'>Don't have an account? Sign up! </p>
 							</button>
-							<button className='btn w-50' type='submit'>
+							<button className='btn' type='submit'>
 								Sign In
 							</button>
 						</div>

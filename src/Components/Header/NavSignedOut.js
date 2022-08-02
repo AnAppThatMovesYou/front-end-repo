@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 function NavSignedOut(props) {
 	let navigate = useNavigate();
 	return (
-		<div>
-			<nav className='navbar navbar-expand-lg navbar-light bg-light signed-out'>
+		<div className='header'>
+			<nav className='navbar navbar-expand-lg signed-out'>
 				<div className='container-fluid real-navbar'>
 					<a className='navbar-brand' href='/'>
 						<img

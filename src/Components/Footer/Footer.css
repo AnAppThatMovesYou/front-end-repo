@@ -35,3 +35,14 @@
         margin-bottom: 1rem;
     }
 }
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    margin: 0.15em;
+    /* margin-bottom: 0.3em; */
+    margin-top: 0.1em;
+}
