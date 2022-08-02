@@ -111,3 +111,7 @@ button {
 .vollkorn {
   font-family: 'Vollkorn', serif;
 }
+
+.username-taken{
+  color: red;
+}

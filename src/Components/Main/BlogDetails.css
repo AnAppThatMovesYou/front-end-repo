@@ -53,3 +53,12 @@ img {
     font-size: 1.2rem;
     max-width: 40rem;
 }
+
+.blog-author{
+    font-size: 0.6em;
+    font-style: italic;
+}
+
+.blog-author-name::first-letter{
+    text-transform: capitalize;
+}

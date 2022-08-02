@@ -53,6 +53,7 @@ function CreateBlog({ logIn, LogInJwt }) {
 					Create your Blog!
 				</h1>
 				<input
+					required
 					type='text'
 					id='title'
 					className='form-control position-relative mb-1 input'
@@ -61,6 +62,7 @@ function CreateBlog({ logIn, LogInJwt }) {
 					onChange={handleChange}
 				/>
 				<input
+					required
 					type='text'
 					id='summary'
 					className='form-control position-relative mb-1 input'
@@ -69,6 +71,7 @@ function CreateBlog({ logIn, LogInJwt }) {
 					onChange={handleChange}
 				/>
 				<textarea
+					required
 					type='text'
 					id='content'
 					className='form-control position-relative mb-1 input'

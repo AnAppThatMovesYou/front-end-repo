@@ -51,6 +51,10 @@ function BlogDetails({ logInJwt }) {
 		return (
 			<li className='blog-card-details details-background'>
 				<h2 className='blog-title'> {blogDetails.title}</h2>
+				<div className='blog-author'>
+					Blog by:{' '}
+					<span className='blog-author-name'>{blogDetails.user.username}</span>
+				</div>
 
 				<div className='blog-summary'>{blogDetails.summary}</div>
 

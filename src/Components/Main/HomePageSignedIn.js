@@ -24,7 +24,6 @@ function HomePageSignedIn({
 			});
 			let data = res.data;
 			setCurrentBlogs(data.reverse());
-			console.log(data);
 		} catch (error) {
 			console.log(error);
 		}
