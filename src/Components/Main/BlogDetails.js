@@ -8,15 +8,18 @@ function BlogDetails({ logInJwt }) {
 
 	const [blogDetails, setBlogDetails] = useState(null);
 	const { id } = useParams();
-	const url = `http://localhost:8080/blogs/${id}`;
+	const url = `https://movingco.herokuapp.com/blogs/${id}`;
 
 	const getBlogDetails = async () => {
 		try {
-			const res = await axios.get(`http://localhost:8080/blogs/${id}`, {
-				headers: {
-					Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
-				},
-			});
+			const res = await axios.get(
+				`https://movingco.herokuapp.com/blogs/${id}`,
+				{
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
+					},
+				}
+			);
 			setBlogDetails(res.data);
 			// console.log(blogDetails.user.username);
 		} catch (error) {

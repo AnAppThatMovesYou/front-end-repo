@@ -25,7 +25,10 @@ function SignUpForm({
 		await setSignUp(signUp);
 
 		try {
-			const response = await axios.post('http://localhost:8080/signup', signUp);
+			const response = await axios.post(
+				'https://movingco.herokuapp.com/signup',
+				signUp
+			);
 			console.log('RESPONSE', response);
 
 			if (response.status === 200) {

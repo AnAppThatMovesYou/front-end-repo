@@ -17,7 +17,7 @@ function HomePageSignedIn({
 	//fetch all the blogs
 	const getBlogs = async () => {
 		try {
-			const res = await axios.get(`http://localhost:8080/blogs`, {
+			const res = await axios.get(`https://movingco.herokuapp.com/blogs`, {
 				headers: {
 					Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
 				},

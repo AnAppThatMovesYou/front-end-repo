@@ -8,7 +8,9 @@ function ViewProfile({ profile, setProfile }) {
 	const getProfile = async () => {
 		try {
 			const res = await axios.get(
-				`http://localhost:8080/user/${localStorage.getItem('logInUsername')}`,
+				`https://movingco.herokuapp.com/user/${localStorage.getItem(
+					'logInUsername'
+				)}`,
 				{
 					headers: {
 						Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,

@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 function EditBlog(props) {
 	const navigate = useNavigate();
 	const { id } = useParams();
-	const url = `http://localhost:8080/blogs/${id}`;
+	const url = `https://movingco.herokuapp.com/blogs/${id}`;
 
 	const [currentPost, setCurrentPost] = useState([]);
 
@@ -36,7 +36,7 @@ function EditBlog(props) {
 		console.log('THIS IS WHAT IM TRYING TO PRINT', currentPost);
 		try {
 			const response = await axios.put(
-				`http://localhost:8080/blogs/${id}`,
+				`https://movingco.herokuapp.com/blogs/${id}`,
 				currentPost,
 				{
 					headers: {
@@ -100,12 +100,12 @@ function EditBlog(props) {
 						onChange={handleChange}
 					/>
 					<div className='button-container'>
-							<button className='btn w-40' type='button' onClick={handleCancel}>
-								Cancel
-							</button>
-							<button className='btn w-50' type='submit'>
-								Post Blog!
-							</button>
+						<button className='btn w-40' type='button' onClick={handleCancel}>
+							Cancel
+						</button>
+						<button className='btn w-50' type='submit'>
+							Post Blog!
+						</button>
 					</div>
 				</form>
 			</div>
