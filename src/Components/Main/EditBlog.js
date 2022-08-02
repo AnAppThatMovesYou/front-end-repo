@@ -20,7 +20,8 @@ function EditBlog(props) {
 					Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
 				},
 			});
-			// const thisObject = omit(res.data);
+			delete res.data['user'];
+			setCurrentPost(res.data);
 		} catch (error) {
 			console.log('Oh no! Some thing has gone Wrong!', error);
 		}
