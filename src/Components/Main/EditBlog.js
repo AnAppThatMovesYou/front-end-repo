@@ -20,7 +20,7 @@ function EditBlog(props) {
 					Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
 				},
 			});
-			setCurrentPost(res.data);
+			// const thisObject = omit(res.data);
 		} catch (error) {
 			console.log('Oh no! Some thing has gone Wrong!', error);
 		}
@@ -32,6 +32,7 @@ function EditBlog(props) {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
+		console.log('THIS IS WHAT IM TRYING TO PRINT', currentPost);
 		try {
 			const response = await axios.put(
 				`http://localhost:8080/blogs/${id}`,
@@ -42,7 +43,7 @@ function EditBlog(props) {
 					},
 				}
 			);
-            console.log(response)
+			console.log(response);
 			if (response.status === 200) {
 				navigate('/home');
 			}
