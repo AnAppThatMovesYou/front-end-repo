@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import BlogContentCard from './BlogContentCard';
 import './HomePageSignedIn.css';
 
 function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 	let navigate = useNavigate();
+
+	
 
 	//fetch all the blogs
 	const getBlogs = async () => {
@@ -27,6 +29,7 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 		getBlogs();
 	}, []);
 
+	
 	return (
 		<div className='main-container'>
 			<p className='text default-font home-title'>
@@ -35,7 +38,7 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 
 			{currentBlogs.map((blogs) => {
 				return (
-					<a href='/details'>
+					<Link to= {`/details/${blogs.id}`}>
 						<BlogContentCard
 							id={blogs.id}
 							title={blogs.title}
@@ -47,7 +50,20 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 							// votes={post.votes}
 							key={blogs.id}
 						/>
-					</a>
+					</Link>
+					// <li className='blog-card' onClick= {(event)=> {
+					// 	event.preventDefault();
+					// 	navigate(`/details/${blogs.id}`)
+					// }}>
+					// 	<div className='img-container'>
+					// 		<img src={blogs.imageUrl} alt='' />
+					// 	</div>
+					// 	<div>
+					// 		<span className='blog-category'>{blogs.category}</span>
+					// 		<h1 className='blog-title'>{blogs.title}</h1>
+					// 		<div className='blog-description'>{blogs.summary}</div>
+					// 	</div>
+					// </li>
 				);
 			})}
 

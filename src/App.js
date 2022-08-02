@@ -1,6 +1,6 @@
 //installing react related modules
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // importing all of the components
 import NavSignedIn from './Components/Header/NavSignedIn';
@@ -14,6 +14,7 @@ import FooterSignedIn from './Components/Footer/FooterSignedIn';
 import SignUpForm from './Components/Main/SignUpForm';
 import SignInForm from './Components/Main/SignInForm';
 import CreateBlog from './Components/Main/CreateBlog';
+import BlogContentCard from './Components/Main/BlogContentCard';
 
 function App() {
 	// INITIAL STATE SETUPS
@@ -48,7 +49,9 @@ function App() {
 
 	// State for all the current blogs
 	const [currentBlogs, setCurrentBlogs] = useState([]);
+	const [blogDetails, setBlogDetails] = useState({});
 
+	
 	return (
 		<div className='bg-color'>
 			<header>
@@ -102,11 +105,11 @@ function App() {
 					/>
 					<Route path='/about' element={<About />} />
 					<Route
-						path='/details'
+						path='/details/:id'
 						element={
 							<BlogDetails
-								currentBlogs={currentBlogs}
-								setCurrentBlogs={setCurrentBlogs}
+								LogInJwt={LogInJwt}
+
 							/>
 						}
 					/>
