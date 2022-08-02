@@ -16,6 +16,7 @@ import SignInForm from './Components/Main/SignInForm';
 import CreateBlog from './Components/Main/CreateBlog';
 import BlogContentCard from './Components/Main/BlogContentCard';
 import EditBlog from './Components/Main/EditBlog';
+import CreateProfile from './Components/Main/CreateProfile';
 
 function App() {
 	// INITIAL STATE SETUPS
@@ -35,6 +36,13 @@ function App() {
 		password: '',
 	};
 
+	// Initial Profile state:
+	const initialProfile ={
+		email: '',
+		mobile: '',
+		address: ''
+	}
+
 	// STATE SET UPS
 	const [signedIn, setSignedIn] = useState(
 		localStorage.getItem('LogInJwt') || false
@@ -51,6 +59,9 @@ function App() {
 	// State for all the current blogs
 	const [currentBlogs, setCurrentBlogs] = useState([]);
 	const [blogDetails, setBlogDetails] = useState({});
+
+	// States associated with Profile
+	const [profile,setProfile] = useState(initialProfile)
 
 	
 	return (
@@ -101,6 +112,8 @@ function App() {
 								signUpJwt={signUpJwt}
 								signedIn={signedIn}
 								setSignedIn={setSignedIn}
+								profile={profile}
+								setProfile={setProfile}
 							/>
 						}
 					/>
@@ -124,6 +137,7 @@ function App() {
 							<EditBlog LogInJwt = {LogInJwt}/>
 						}
 						/>
+					<Route path= '/createprofile' element={ <CreateProfile profile= {profile} setProfile={setProfile} setSignedIn={setSignedIn}/>}/>
 				</Routes>
 			</main>
 			<footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer>
