@@ -1,67 +1,63 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function EditBlog(props) {
-    const navigate = useNavigate();
-	const { id }  = useParams();
-    const url = `http://localhost:8080/blogs/${id}`;
+	const navigate = useNavigate();
+	const { id } = useParams();
+	const url = `http://localhost:8080/blogs/${id}`;
 
-    const [currentPost, setCurrentPost] = useState([]);
+	const [currentPost, setCurrentPost] = useState([]);
 
-    function handleChange(event) {
-			setCurrentPost({ ...currentPost, [event.target.id]: event.target.value });
+	function handleChange(event) {
+		setCurrentPost({ ...currentPost, [event.target.id]: event.target.value });
+	}
+
+	const getBlog = async () => {
+		try {
+			const res = await axios.get(url, {
+				headers: {
+					Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
+				},
+			});
+			setCurrentPost(res.data);
+		} catch (error) {
+			console.log('Oh no! Some thing has gone Wrong!', error);
 		}
-    
-    
-    const getBlog = async ()=> {
-        try{
-            const res = await axios.get(url, {
-							headers: {
-								Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
-							},
-						});
-            setCurrentPost(res.data)
-        }
-        catch (error) {
-            console.log("Oh no! Some thing has gone Wrong!",error)
-        }
-    }
+	};
 
+	useEffect(() => {
+		getBlog();
+	}, []);
 
-    useEffect(() => {
-			getBlog();
-            }, []);
-    
-
-
-    const handleSubmit = async (event) => {
-			event.preventDefault();
-			try {
-				const response = await axios.put(
-					`http://localhost:8080/blogs/${id}`,
-					currentPost,
-					{
-						headers: {
-							Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
-						},
-					}
-				);
-				if (response.status === 200) {
-					navigate('/home');
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		try {
+			const response = await axios.put(
+				`http://localhost:8080/blogs/${id}`,
+				currentPost,
+				{
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
+					},
 				}
-			} catch (error) {
-				console.log(error);
+			);
+            console.log(response)
+			if (response.status === 200) {
+				navigate('/home');
 			}
-		};
-    
-        function handleCancel(event) {
-					event.preventDefault();
-					navigate(`/details/${id}`);
-				}
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
-    if (currentPost){    
-    return (
+	function handleCancel(event) {
+		event.preventDefault();
+		navigate(`/details/${id}`);
+	}
+
+	if (currentPost) {
+		return (
 			<div className='d-flex flex-column p-3 gap-3 create-blog-container'>
 				<form className='form form-group' onSubmit={handleSubmit}>
 					<h1 className='default-font position-relative mb-3 text-center'>
@@ -123,7 +119,7 @@ function EditBlog(props) {
 				</form>
 			</div>
 		);
-    }
+	}
 }
 
 export default EditBlog;
