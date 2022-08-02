@@ -82,17 +82,6 @@ function CreateBlog({ logIn, LogInJwt }) {
 					value={blogState.imageUrl}
 					onChange={handleChange}
 				/>
-				<select
-					id='category'
-					name='Category'
-					className='form-control position-relative mb-1 input'>
-					{/* value={blogState.category} */}
-					{/* onChange={handleChange} */}
-					<option>Your blog's category</option>
-					<option value={'Moving Tips'}>Moving Tips</option>
-					<option value={'Moving Feelings'}>Moving Feelings</option>
-					<option value={'Moving Tricks'}>Moving Tricks</option>
-				</select>
 				<div className='button-container'>
 					<button className='btn w-40' type='button' onClick={handleCancel}>
 						Cancel
