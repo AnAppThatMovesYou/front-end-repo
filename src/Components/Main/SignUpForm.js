@@ -41,8 +41,8 @@ function SignUpForm({
 	return (
 		<div className='signup-form container-fluid d-flex justify-content-center align-items-center'>
 			<form className='form form-group shadow-lg d-flex flex-column justify-content-center align-items-center gap-3' onSubmit={handleSubmit}>
-				<h1 className='position-relative mb-3 text-center title-text playfair'>
-					Sign Up!
+				<h1 className='position-relative mb-3 text-center title-text default-font'>
+					Sign Up
 				</h1>
 				<input
 					id='username'
