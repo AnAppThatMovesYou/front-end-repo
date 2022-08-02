@@ -45,7 +45,7 @@ a {
 }
 
 a:hover {
-  color: grey;
+  color: inherit;
 }
 
 ul,

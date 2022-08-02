@@ -31,9 +31,9 @@ function HomePageSignedIn({ LogInJwt, currentBlogs, setCurrentBlogs }) {
 
 	
 	return (
-		<div className='main-container'>
-			<p className='text default-font home-title'>
-				A blog for all of your moving needs
+		<div className='main-container container-fluid d-flex flex-column align-items-center'>
+			<p className='default-font home-title-in text-center'>
+				The blog for all of your moving needs
 			</p>
 
 			{currentBlogs.map((blogs) => {

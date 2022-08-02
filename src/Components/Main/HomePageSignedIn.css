@@ -1,11 +1,10 @@
 .main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     min-height: 100vh;
-    margin-bottom: 5%;
+    background-color: rgb(244, 241, 232);
+}
+
+.main-container:hover {
+    color: rgb(42, 42, 42)
 }
 
 .blog-container {
@@ -16,13 +15,13 @@
 }
 
 .home-title-in {
-    font-size: 5rem;
-    max-width: 80%;
+    font-size: 4rem;
+    max-width: 70%;
     text-align: center;
 }
 
 .text-in {
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 1.2;
 }
 

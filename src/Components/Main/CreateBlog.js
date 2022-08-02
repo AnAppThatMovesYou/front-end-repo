@@ -42,9 +42,11 @@ function CreateBlog({ logIn, LogInJwt }) {
 		navigate('/home');
 	}
 	return (
-		<div className='d-flex flex-column p-3 gap-3 create-blog-container'>
-			<form className='form form-group' onSubmit={handleSubmit}>
-				<h1 className='default-font position-relative mb-3 text-center'>
+		<div className='d-flex flex-column p-3 gap-3 create-blog-container justify-content-center align-items-center'>
+			<form
+				className='create-blog-form form-group shadow-lg d-flex flex-column justify-content-center align-items-center gap-3'
+				onSubmit={handleSubmit}>
+				<h1 className='default-font position-relative mb-3 text-center create-blog-title'>
 					Create your Blog!
 				</h1>
 				<input
@@ -91,14 +93,12 @@ function CreateBlog({ logIn, LogInJwt }) {
 					<option value={'Moving Tricks'}>Moving Tricks</option>
 				</select>
 				<div className='button-container'>
-					<div className='d-flex flex-row'>
-						<button className='btn w-50' type='button' onClick={handleCancel}>
+						<button className='btn w-40' type='button' onClick={handleCancel}>
 							Cancel
 						</button>
-						<button className='btn w-50' type='submit'>
+						<button className='btn w-40' type='submit'>
 							Post Blog!
 						</button>
-					</div>
 				</div>
 			</form>
 		</div>
