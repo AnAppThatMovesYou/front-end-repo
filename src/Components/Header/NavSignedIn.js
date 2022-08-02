@@ -13,6 +13,8 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 			navigate('/home');
 		} else if (event.target.id === 'about') {
 			navigate('/about');
+		} else if (event.target.id === 'profile'){
+			navigate('/profile');
 		}
 	}
 
@@ -76,7 +78,7 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 								<a
 									href='/profile'
 									className='nav-link'
-									id='about'
+									id='profile'
 									onClick={handleSignedin}>
 									Profile
 								</a>

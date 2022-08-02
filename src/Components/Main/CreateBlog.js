@@ -29,6 +29,7 @@ function CreateBlog({ logIn, LogInJwt }) {
 					headers: { Authorization: `Bearer ${LogInJwt}`, Test: 'hello' },
 				}
 			);
+
 			if (response.status === 200) {
 				navigate('/home');
 			}
@@ -93,12 +94,12 @@ function CreateBlog({ logIn, LogInJwt }) {
 					<option value={'Moving Tricks'}>Moving Tricks</option>
 				</select>
 				<div className='button-container'>
-						<button className='btn w-40' type='button' onClick={handleCancel}>
-							Cancel
-						</button>
-						<button className='btn w-40' type='submit'>
-							Post Blog!
-						</button>
+					<button className='btn w-40' type='button' onClick={handleCancel}>
+						Cancel
+					</button>
+					<button className='btn w-40' type='submit'>
+						Post Blog!
+					</button>
 				</div>
 			</form>
 		</div>
