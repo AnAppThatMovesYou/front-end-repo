@@ -31,6 +31,13 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  background-image: url(https://images.unsplash.com/photo-1545957801-d100b7552e9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right 100% bottom 52%;
+}
+
 /* Basic Reset */
 a {
   color: inherit;

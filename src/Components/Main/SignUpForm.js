@@ -40,8 +40,8 @@ function SignUpForm({
 	};
 	return (
 		<div className='signup-form container-fluid d-flex justify-content-center align-items-center'>
-			<form className='form form-group' onSubmit={handleSubmit}>
-				<h1 className='default-font position-relative mb-3 text-center'>
+			<form className='form form-group shadow-lg d-flex flex-column justify-content-center align-items-center gap-3' onSubmit={handleSubmit}>
+				<h1 className='position-relative mb-3 text-center title-text playfair'>
 					Sign Up!
 				</h1>
 				<input
@@ -72,7 +72,7 @@ function SignUpForm({
 						<button className='btn w-50' type='button'>
 							<p className='signup-text'>Already have an account?</p>
 						</button>
-						<button className='btn w-50' type='submit'>
+						<button className='btn' type='submit'>
 							Sign Up
 						</button>
 					</div>
