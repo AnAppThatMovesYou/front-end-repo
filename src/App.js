@@ -52,7 +52,6 @@ function App() {
 	const [currentBlogs, setCurrentBlogs] = useState([]);
 	const [blogDetails, setBlogDetails] = useState({});
 
-	
 	return (
 		<div className='bg-color'>
 			<header>
@@ -107,12 +106,7 @@ function App() {
 					<Route path='/about' element={<About />} />
 					<Route
 						path='/details/:id'
-						element={
-							<BlogDetails
-								LogInJwt={LogInJwt}
-
-							/>
-						}
+						element={<BlogDetails LogInJwt={LogInJwt} />}
 					/>
 					<Route
 						path='/createblog'
@@ -120,13 +114,14 @@ function App() {
 					/>
 					<Route
 						path='/editblog/:id'
-						element={
-							<EditBlog LogInJwt = {LogInJwt}/>
-						}
-						/>
+						element={<EditBlog LogInJwt={LogInJwt} />}
+					/>
 				</Routes>
 			</main>
-			<footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer>
+			{/* <footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer> */}
+			<footer>
+				<FooterSignedIn />
+			</footer>
 		</div>
 	);
 }

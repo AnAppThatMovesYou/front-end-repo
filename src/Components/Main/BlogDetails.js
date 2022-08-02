@@ -18,6 +18,7 @@ function BlogDetails({ logInJwt }) {
 				},
 			});
 			setBlogDetails(res.data);
+			// console.log(blogDetails.user.username);
 		} catch (error) {
 			console.log(error);
 		}
@@ -58,17 +59,25 @@ function BlogDetails({ logInJwt }) {
 
 				<div>Category: {`#${blogDetails.category}`}</div>
 
-				<button type='button' onClick={handleDelete}>
-					Delete Post
-				</button>
-				<button
-					type='button'
-					onClick={(event) => {
-						event.preventDefault();
-						navigate(`/editblog/${blogDetails.id}`);
-					}}>
-					Edit Post
-				</button>
+				{blogDetails.user.username === localStorage.getItem('logInUsername') ? (
+					<button type='button' onClick={handleDelete}>
+						Delete Post
+					</button>
+				) : (
+					''
+				)}
+				{blogDetails.user.username === localStorage.getItem('logInUsername') ? (
+					<button
+						type='button'
+						onClick={(event) => {
+							event.preventDefault();
+							navigate(`/editblog/${blogDetails.id}`);
+						}}>
+						Edit Post
+					</button>
+				) : (
+					''
+				)}
 			</li>
 		);
 	}

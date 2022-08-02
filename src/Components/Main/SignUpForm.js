@@ -38,9 +38,16 @@ function SignUpForm({
 			console.log(error);
 		}
 	};
+
+	function handleSignin(event) {
+		event.preventDefault();
+		navigate('/signin');
+	}
 	return (
 		<div className='signup-form container-fluid d-flex justify-content-center align-items-center'>
-			<form className='form form-group shadow-lg d-flex flex-column justify-content-center align-items-center gap-3' onSubmit={handleSubmit}>
+			<form
+				className='form form-group shadow-lg d-flex flex-column justify-content-center align-items-center gap-3'
+				onSubmit={handleSubmit}>
 				<h1 className='position-relative mb-3 text-center title-text default-font'>
 					Sign Up
 				</h1>
@@ -69,8 +76,8 @@ function SignUpForm({
 
 				<div className='button-container'>
 					<div className='d-flex flex-row'>
-						<button className='btn w-50' type='button'>
-							<p className='signup-text'>Already have an account?</p>
+						<button className='btn w-50' type='button' onClick={handleSignin}>
+							<p className='signup-text'>Already have an account? Sign in!</p>
 						</button>
 						<button className='btn' type='submit'>
 							Sign Up

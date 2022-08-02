@@ -42,6 +42,11 @@ function SignInForm({
 		}
 	};
 
+	function handleSignup(event) {
+		event.preventDefault();
+		navigate('/signup');
+	}
+
 	return (
 		<div>
 			<div className='signup-form container-fluid d-flex justify-content-center align-items-center align-items-center'>
@@ -69,8 +74,8 @@ function SignInForm({
 					/>
 					<div className='button-container'>
 						<div className='d-flex flex-row'>
-							<button className='btn w-50' type='button'>
-								<p className='signup-text'>Don't have an account? </p>
+							<button className='btn w-50' type='button' onClick={handleSignup}>
+								<p className='signup-text'>Don't have an account? Sign up! </p>
 							</button>
 							<button className='btn' type='submit'>
 								Sign In
