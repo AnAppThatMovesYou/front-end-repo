@@ -8,16 +8,20 @@ function BlogDetails({ logInJwt }) {
 
 	const [blogDetails, setBlogDetails] = useState(null);
 	const { id } = useParams();
-	const url = `http://localhost:8080/blogs/${id}`;
+	const url = `https://movingco.herokuapp.com/blogs/${id}`;
 
 	const getBlogDetails = async () => {
 		try {
-			const res = await axios.get(`http://localhost:8080/blogs/${id}`, {
-				headers: {
-					Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
-				},
-			});
+			const res = await axios.get(
+				`https://movingco.herokuapp.com/blogs/${id}`,
+				{
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
+					},
+				}
+			);
 			setBlogDetails(res.data);
+			// console.log(blogDetails.user.username);
 		} catch (error) {
 			console.log(error);
 		}
@@ -56,19 +60,32 @@ function BlogDetails({ logInJwt }) {
 
 				<div className='blog-content'>{blogDetails.content}</div>
 
-					<div>
-						<button type='button' onClick={handleDelete} className='details-btn btn'>
-							Delete Post
-						</button>
-						<button
-							type='button'
-							onClick={(event) => {
-								event.preventDefault();
-								navigate(`/editblog/${blogDetails.id}`);
-							}} className='details-btn btn'>
-							Edit Post
-						</button>
-					</div>
+				<div>Category: {`#${blogDetails.category}`}</div>
+
+				{blogDetails.user.username === localStorage.getItem('logInUsername') ? (
+					<button
+						type='button'
+						className='details-btn btn'
+						onClick={handleDelete}>
+						Delete Post
+					</button>
+				) : (
+					''
+				)}
+				{blogDetails.user.username === localStorage.getItem('logInUsername') ? (
+					<button
+						type='button'
+						className='details-btn btn'
+						onClick={(event) => {
+							event.preventDefault();
+							navigate(`/editblog/${blogDetails.id}`);
+						}}>
+						Edit Post
+					</button>
+				) : (
+					''
+				)}
+
 			</li>
 		);
 	}

@@ -28,7 +28,10 @@ function SignInForm({
 		await setLogIn(logIn);
 
 		try {
-			const response = await axios.post('http://localhost:8080/login', logIn);
+			const response = await axios.post(
+				'https://movingco.herokuapp.com/login',
+				logIn
+			);
 
 			console.log('RESPONSE', response);
 			setLogInJwt(response.data.token);
@@ -47,6 +50,11 @@ function SignInForm({
 			console.log(error);
 		}
 	};
+
+	function handleSignup(event) {
+		event.preventDefault();
+		navigate('/signup');
+	}
 
 	return (
 		<div>
@@ -75,8 +83,8 @@ function SignInForm({
 					/>
 					<div className='button-container'>
 						<div className='d-flex flex-row'>
-							<button className='btn w-50' type='button'>
-								<p className='signup-text'>Don't have an account? </p>
+							<button className='btn w-50' type='button' onClick={handleSignup}>
+								<p className='signup-text'>Don't have an account? Sign up! </p>
 							</button>
 							<button className='btn' type='submit'>
 								Sign In

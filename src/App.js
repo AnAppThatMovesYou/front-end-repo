@@ -64,11 +64,19 @@ function App() {
 	// States associated with Profile
 	const [profile, setProfile] = useState(initialProfile);
 
+	//Search bar functionality
+	const [inputQuery, setInputQuery] = useState('');
+
 	return (
 		<div className='bg-color'>
 			<header>
 				{signedIn ? (
-					<NavSignedIn signedIn={signedIn} setSignedIn={setSignedIn} />
+					<NavSignedIn
+						signedIn={signedIn}
+						setSignedIn={setSignedIn}
+						inputQuery={inputQuery}
+						setInputQuery={setInputQuery}
+					/>
 				) : (
 					<NavSignedOut signedIn={signedIn} />
 				)}
@@ -83,6 +91,7 @@ function App() {
 								LogInJwt={LogInJwt}
 								currentBlogs={currentBlogs}
 								setCurrentBlogs={setCurrentBlogs}
+								inputQuery={inputQuery}
 							/>
 						}
 					/>
@@ -146,7 +155,10 @@ function App() {
 					/>
 				</Routes>
 			</main>
-			<footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer>
+			{/* <footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer> */}
+			<footer>
+				<FooterSignedIn />
+			</footer>
 		</div>
 	);
 }
