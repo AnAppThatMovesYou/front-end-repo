@@ -27,27 +27,22 @@ function BlogDetails({ logInJwt }) {
 		getBlogDetails();
 	}, []);
 
-	const handleDelete = () =>{
+	const handleDelete = () => {
 		try {
 			const response = axios.delete(url, {
-			headers: {
-				Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
-			},
-		})
-			console.log(response)
-		
+				headers: {
+					Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
+				},
+			});
+			console.log(response);
+
 			if (response.status === 200) {
-			navigate('/home');
-
+				navigate('/home');
+			}
+		} catch (error) {
+			console.log(error);
 		}
-		}
-
-		catch (error){
-			console.log(error)
-		}
-		
-	}
-
+	};
 
 	// const handleDelete =()=>{
 
@@ -67,7 +62,9 @@ function BlogDetails({ logInJwt }) {
 
 				<div>Category: {`#${blogDetails.category}`}</div>
 
-				<button type='button' onClick={handleDelete}>Delete Post</button>
+				<button type='button' onClick={handleDelete}>
+					Delete Post
+				</button>
 				<button
 					type='button'
 					onClick={(event) => {
@@ -76,7 +73,6 @@ function BlogDetails({ logInJwt }) {
 					}}>
 					Edit Post
 				</button>
-				
 			</div>
 		);
 	}
