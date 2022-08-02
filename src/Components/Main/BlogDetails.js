@@ -1,9 +1,11 @@
 import './BlogDetails.css';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
-function BlogDetails({logInJwt}) {
+function BlogDetails({ logInJwt }) {
+	const navigate = useNavigate();
+
 	const [blogDetails, setBlogDetails] = useState(null);
 	const { id } = useParams();
 	const url = `http://localhost:8080/blogs/${id}`;
@@ -15,9 +17,7 @@ function BlogDetails({logInJwt}) {
 					Authorization: `Bearer ${localStorage.getItem('LogInJwt')}`,
 				},
 			});
-			setBlogDetails(res.data)
-			
-			
+			setBlogDetails(res.data);
 		} catch (error) {
 			console.log(error);
 		}
@@ -25,31 +25,40 @@ function BlogDetails({logInJwt}) {
 
 	useEffect(() => {
 		getBlogDetails();
-	},[]);
+	}, []);
 
 	// const handleDelete =()=>{
 
 	// }
 	if (blogDetails) {
-	return (
-		<div>
-			<h2> {blogDetails.title}</h2>
-
-			<div>{blogDetails.summary}</div>
-
+		return (
 			<div>
-				<img src={blogDetails.imgUrl} alt='image of family moving' />
+				<h2> {blogDetails.title}</h2>
+
+				<div>{blogDetails.summary}</div>
+
+				<div>
+					<img src={blogDetails.imgUrl} alt='image of family moving' />
+				</div>
+
+				<div>{blogDetails.content}</div>
+
+				<div>Category: {`#${blogDetails.category}`}</div>
+
+				<button type='button'>Delete Post</button>
+				<button
+					type='button'
+					onClick={(event) => {
+						event.preventDefault();
+						navigate(`/editblog/${blogDetails.id}`);
+					}}>
+					Edit Post
+				</button>
+				{/* <Link to ={`editblog/${blogDetails.id}`}>
+					<div> Edit post</div>
+				</Link> */}
 			</div>
-
-			<div>
-				{blogDetails.content}
-			</div>
-
-
-			<button type='button'>Delete Post</button>
-			<button type='button'>Edit Post</button>
-		</div>
-	);
+		);
 	}
 }
 

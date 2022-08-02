@@ -15,6 +15,7 @@ import SignUpForm from './Components/Main/SignUpForm';
 import SignInForm from './Components/Main/SignInForm';
 import CreateBlog from './Components/Main/CreateBlog';
 import BlogContentCard from './Components/Main/BlogContentCard';
+import EditBlog from './Components/Main/EditBlog';
 
 function App() {
 	// INITIAL STATE SETUPS
@@ -117,6 +118,12 @@ function App() {
 						path='/createblog'
 						element={<CreateBlog logIn={logIn} LogInJwt={LogInJwt} />}
 					/>
+					<Route
+						path='/editblog/:id'
+						element={
+							<EditBlog LogInJwt = {LogInJwt}/>
+						}
+						/>
 				</Routes>
 			</main>
 			<footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer>
