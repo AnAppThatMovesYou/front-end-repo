@@ -12,6 +12,7 @@ function SignUpForm({
 	setSignedIn,
 }) {
 	const navigate = useNavigate();
+	const [usernameExists, setUsernameExists] = useState(false);
 
 	function handleChange(event) {
 		setSignUp({
@@ -29,16 +30,18 @@ function SignUpForm({
 				'https://movingco.herokuapp.com/signup',
 				signUp
 			);
-			console.log('RESPONSE', response);
+			// console.log('RESPONSE', response);
 
 			if (response.status === 200) {
 				setSignUpJwt(response.data.token);
 				setSignedIn(true);
+				setUsernameExists(false);
 				localStorage.setItem('LogInJwt', response.data.token);
 				navigate('/signin');
 			}
 		} catch (error) {
 			console.log(error);
+			setUsernameExists(true);
 		}
 	};
 
@@ -76,6 +79,12 @@ function SignUpForm({
 					className='form-control position-relative mb-1 input'
                     placeholder='Email'
 				/> */}
+				{usernameExists ? (
+					<div className='username-taken'>This username is already taken! </div>
+				) : (
+					''
+				)}
+				{/* <div>Username already exists</div> */}
 
 				<div className='button-container'>
 					<div className='d-flex flex-row'>
