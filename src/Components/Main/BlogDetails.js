@@ -60,7 +60,10 @@ function BlogDetails({ logInJwt }) {
 				<div>Category: {`#${blogDetails.category}`}</div>
 
 				{blogDetails.user.username === localStorage.getItem('logInUsername') ? (
-					<button type='button' className='details-btn btn' onClick={handleDelete}>
+					<button
+						type='button'
+						className='details-btn btn'
+						onClick={handleDelete}>
 						Delete Post
 					</button>
 				) : (
