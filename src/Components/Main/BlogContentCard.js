@@ -10,13 +10,13 @@ function BlogContentCard({
 }) {
 	return (
 		<li className='blog-card'>
-			<div className='img-container'>
+			<div className='image-container'>
 				<img src={imageUrl} alt='' />
 			</div>
 			<div>
-				<span className='blog-category'>{category}</span>
-				<h1 className='blog-title'>{title}</h1>
-				<div className='blog-description'>{summary}</div>
+				<span className='blog-category-in'>{category}</span>
+				<h1 className='blog-title-in'>{title}</h1>
+				<div className='blog-description-in'>{summary}</div>
 			</div>
 		</li>
 	);

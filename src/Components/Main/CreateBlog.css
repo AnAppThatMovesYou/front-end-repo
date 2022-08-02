@@ -1,8 +1,22 @@
 .create-blog-container{
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.create-blog-form {
+    max-height: 80vh !important;
+    width: 60vw;
+    padding: 1rem;
+    border: solid black;
+    border-radius: 1rem;
+    background-color: rgb(40, 40, 40);
+}
+
+.create-blog-title {
+    color: white;
+}
+
+.button-container {
+    width: 100%;
 }
 
 .form{

@@ -45,7 +45,7 @@ function BlogDetails({ logInJwt }) {
 	// }
 	if (blogDetails) {
 		return (
-			<div>
+			<li className='blog-card'>
 				<h2> {blogDetails.title}</h2>
 
 				<div>{blogDetails.summary}</div>
@@ -69,7 +69,7 @@ function BlogDetails({ logInJwt }) {
 					}}>
 					Edit Post
 				</button>
-			</div>
+			</li>
 		);
 	}
 }
