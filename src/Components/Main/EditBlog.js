@@ -100,12 +100,14 @@ function EditBlog(props) {
 						onChange={handleChange}
 					/>
 					<div className='button-container'>
+
 						<button className='btn w-40' type='button' onClick={handleCancel}>
 							Cancel
 						</button>
 						<button className='btn w-50' type='submit'>
 							Post Blog!
 						</button>
+
 					</div>
 				</form>
 			</div>

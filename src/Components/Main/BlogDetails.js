@@ -85,6 +85,7 @@ function BlogDetails({ logInJwt }) {
 				) : (
 					''
 				)}
+
 			</li>
 		);
 	}

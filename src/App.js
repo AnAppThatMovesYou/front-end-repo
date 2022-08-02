@@ -63,6 +63,7 @@ function App() {
 
 	// States associated with Profile
 	const [profile, setProfile] = useState(initialProfile);
+
 	//Search bar functionality
 	const [inputQuery, setInputQuery] = useState('');
 
