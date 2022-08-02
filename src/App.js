@@ -17,6 +17,7 @@ import CreateBlog from './Components/Main/CreateBlog';
 import BlogContentCard from './Components/Main/BlogContentCard';
 import EditBlog from './Components/Main/EditBlog';
 import CreateProfile from './Components/Main/CreateProfile';
+import ViewProfile from './Components/Main/ViewProfile';
 
 function App() {
 	// INITIAL STATE SETUPS
@@ -37,11 +38,11 @@ function App() {
 	};
 
 	// Initial Profile state:
-	const initialProfile ={
+	const initialProfile = {
 		email: '',
 		mobile: '',
-		address: ''
-	}
+		address: '',
+	};
 
 	// STATE SET UPS
 	const [signedIn, setSignedIn] = useState(
@@ -60,13 +61,9 @@ function App() {
 	const [currentBlogs, setCurrentBlogs] = useState([]);
 	const [blogDetails, setBlogDetails] = useState({});
 
-<<<<<<< HEAD
-=======
 	// States associated with Profile
-	const [profile,setProfile] = useState(initialProfile)
+	const [profile, setProfile] = useState(initialProfile);
 
-	
->>>>>>> 16f7358 (add 'create profile' component with complete functionality)
 	return (
 		<div className='bg-color'>
 			<header>
@@ -131,11 +128,22 @@ function App() {
 					/>
 					<Route
 						path='/editblog/:id'
+						element={<EditBlog LogInJwt={LogInJwt} />}
+					/>
+					<Route
+						path='/createprofile'
 						element={
-							<EditBlog LogInJwt = {LogInJwt}/>
+							<CreateProfile
+								profile={profile}
+								setProfile={setProfile}
+								setSignedIn={setSignedIn}
+							/>
 						}
-						/>
-					<Route path= '/createprofile' element={ <CreateProfile profile= {profile} setProfile={setProfile} setSignedIn={setSignedIn}/>}/>
+					/>
+					<Route
+						path='/profile'
+						element={<ViewProfile profile={profile} setProfile={setProfile} />}
+					/>
 				</Routes>
 			</main>
 			{/* <footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer> */}
