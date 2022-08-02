@@ -1,9 +1,16 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-function NavSignedIn({ setSignedIn, signedIn }) {
+function NavSignedIn({ setSignedIn, signedIn, setInputQuery }) {
 	let navigate = useNavigate();
+
+	const initialFormState = {
+		input: '',
+	};
+	const [formState, setFormState] = useState(initialFormState);
+
 	function handleSignedin(event) {
 		event.preventDefault();
 		setSignedIn(true);
@@ -24,6 +31,11 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 		localStorage.removeItem('LogInJwt');
 		navigate('/');
 	}
+
+	function handleChange(event) {
+		setFormState({ ...formState, input: event.target.value });
+		setInputQuery(event.target.value);
+	}
 	return (
 		<div>
 			<nav class='navbar navbar-expand-lg signed-in shadow-lg default-font'>
@@ -35,6 +47,14 @@ function NavSignedIn({ setSignedIn, signedIn }) {
 							className='logo'
 						/>
 					</Link>
+					<input
+						type='text'
+						name='search bar'
+						id='search-bar'
+						onChange={handleChange}
+						value={formState.input}
+					/>
+					<label htmlFor="search-bar">Search</label>
 					<button
 						class='navbar-toggler'
 						type='button'
