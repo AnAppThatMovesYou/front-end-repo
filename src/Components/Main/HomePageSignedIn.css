@@ -1,6 +1,7 @@
 .main-container {
     min-height: 100vh;
-    background-color: rgb(244, 241, 232);
+    width: 100vw;
+    background-color: white;
 }
 
 .main-container:hover {
@@ -8,10 +9,12 @@
 }
 
 .blog-container {
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: white;
+    max-width: 1200px;
 }
 
 .home-title-in {
