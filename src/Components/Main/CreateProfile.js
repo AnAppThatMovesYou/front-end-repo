@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import PhoneInput from 'react-phone-number-input';
 
 function CreateProfile({ profile, setProfile, setSignedIn }) {
 	const navigate = useNavigate();
@@ -60,14 +59,6 @@ function CreateProfile({ profile, setProfile, setSignedIn }) {
 					value={profile.email}
 					onChange={handleChange}
 				/>
-				{/* <PhoneInput
-						id='mobile'
-						type='text'
-						className='form-control position-relative mb-1 input'
-						placeholder='Mobile'
-						value={profile.mobile}
-						onChange={handleChange}
-					/> */}
 				<input
 					id='mobile'
 					type='text'
