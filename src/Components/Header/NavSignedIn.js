@@ -40,11 +40,21 @@ function NavSignedIn({ setSignedIn, signedIn, setInputQuery }) {
 		<div>
 			<nav class='navbar navbar-expand-lg signed-in shadow-lg default-font'>
 				<div class='container-fluid real-navbar'>
-					<Link class='navbar-brand' to='/home'>
-						<img
-							src={require('../../images/MovingCo-logos_transparent.png')}
-							alt=''
-							className='logo'
+					<div>
+						<Link class='navbar-brand' to='/home'>
+							<img
+								src={require('../../images/MovingCo-logos_transparent.png')}
+								alt=''
+								className='logo'
+							/>
+						</Link>
+						<input
+							type='text'
+							name='search bar'
+							className='search-input'
+							id='search-bar'
+							onChange={handleChange}
+							value={formState.input}
 						/>
 					</Link>
 					<input
@@ -53,6 +63,7 @@ function NavSignedIn({ setSignedIn, signedIn, setInputQuery }) {
 						id='search-bar'
 						onChange={handleChange}
 						value={formState.input}
+						className=' search signedout-btn'
 					/>
 					<label htmlFor='search-bar'>Search</label>
 					<button
