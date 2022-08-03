@@ -53,11 +53,10 @@ header {
     .search {
         font-size: 0.5rem !important;
         padding: 0.3rem;
-
     }
 
     .navbar-toggler {
-        font-size: 1rem;
+        font-size: 0.8rem;
         box-shadow: none !important;
     }
 }

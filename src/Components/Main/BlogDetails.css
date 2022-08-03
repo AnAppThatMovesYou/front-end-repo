@@ -16,8 +16,8 @@
 
 .edit-delete {
     display: flex;
-
-    /* justify-content: flex-end; */
+/* 
+    justify-content: flex-end; */
 }
 
 .details-btn {
@@ -46,7 +46,12 @@
     font-style: italic;
 }
 
-img {
+/* img {
+    width: auto;
+    height: 30em;
+    object-fit: cover;
+} */
+.details-img-container {
     width: auto;
     height: 30em;
     object-fit: cover;
@@ -54,10 +59,11 @@ img {
 
 
 
-/* .blog-content-details {
+
+.blog-content-details {
     font-size: 1.2rem;
     max-width: 40rem;
-} */
+}
 
 .blog-content{
     padding: 4em;
@@ -69,4 +75,34 @@ img {
 .blog-author{
     font-size: 0.6em;
     font-style: italic;
+}
+
+@media (max-width: 735px) {
+    .details-img-container {
+        width: auto;
+        height: 20em;
+        object-fit: cover;
+    }
+
+    .blog-content {
+        padding: 3em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        text-align: left;
+    }
+}
+
+@media (max-width: 500px) {
+    .details-img-container {
+        width: auto;
+        height: 15em;
+        object-fit: cover;
+    }
+
+    .blog-content {
+        padding: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        text-align: left;
+    }
 }
