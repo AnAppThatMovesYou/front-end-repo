@@ -62,7 +62,7 @@ function App() {
 	const [blogDetails, setBlogDetails] = useState({});
 
 	// States associated with Profile
-	const [profile, setProfile] = useState(initialProfile);
+	const [profile, setProfile] = useState({});
 
 	//Search bar functionality
 	const [inputQuery, setInputQuery] = useState('');
