@@ -95,7 +95,9 @@ function SignInForm({
 						onChange={handleChange}
 					/>
 					{invalidUsername ? (
-						<div className='username-taken'>This username does not exist! </div>
+						<div className='username-taken'>
+							Either the entered username or password is incorrect!{' '}
+						</div>
 					) : (
 						''
 					)}
