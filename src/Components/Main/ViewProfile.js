@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './ViewProfile';
+import './ViewProfile.css'
 
 function ViewProfile() {
 	// Initial Profile state:
@@ -39,22 +39,23 @@ function ViewProfile() {
 
 	if (profile) {
 		return (
-			<div>
-				<h2>Welcome! {localStorage.getItem('logInUsername')}</h2>
-
-				<ul>
-					<li className='profile-details'>
-						Email: <span className='profile-details-span'>{profile.email}</span>
-					</li>
-					<li className='profile-details'>
-						Mobile Number:{' '}
-						<span className='profile-details-span'>{profile.mobile}</span>
-					</li>
-					<li className='profile-details'>
-						Address:{' '}
-						<span className='profile-details-span'>{profile.address}</span>
-					</li>
-				</ul>
+			<div className='d-flex justify-content-center align-items-center container-fluid big-container'>
+				<div className='container-fluid d-flex flex-column justify-content-center align-items-center form profile-container'>
+					<h2 className='default-font'>Welcome {localStorage.getItem('logInUsername')}!</h2>
+					<ul className=''>
+						<li className='profile-details vollkorn'>
+							Email: <span className='profile-details'>{profile.email}</span>
+						</li>
+						<li className='profile-details vollkorn'>
+							Mobile Number:{' '}
+							<span className='profile-details'>{profile.mobile}</span>
+						</li>
+						<li className='profile-details vollkorn'>
+							Address:{' '}
+							<span className='profile-details-span'>{profile.address}</span>
+						</li>
+					</ul>
+				</div>
 			</div>
 		);
 	} else {

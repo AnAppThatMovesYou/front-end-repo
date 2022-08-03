@@ -25,3 +25,38 @@ header {
 .real-navbar {
     width: 100vw;
 }
+
+.search-input {
+    width: 10rem;
+    padding: 0;
+    margin-right: 5px;
+    border: solid black 0.15rem;
+    border-radius: 6px;
+    height: 2rem;
+}
+
+.search {
+    font-size: 0.9rem !important;
+    padding: 0.3rem;
+}
+
+@media (max-width: 530px) {
+    .search-input {
+        width: 5rem;
+        padding: 0;
+        margin-right: 3px;
+        border: solid black 0.15rem;
+        border-radius: 6px;
+        height: 1.9rem;
+    }
+
+    .search {
+        font-size: 0.5rem !important;
+        padding: 0.3rem;
+    }
+
+    .navbar-toggler {
+        font-size: 0.8rem;
+        box-shadow: none !important;
+    }
+}

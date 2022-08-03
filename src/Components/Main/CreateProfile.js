@@ -86,19 +86,17 @@ function CreateProfile({ setSignedIn }) {
 				/>
 
 				<div className='button-container'>
-					<div className='d-flex flex-row'>
 						<button
-							className='btn w-50'
+							className='btn w-40'
 							type='button'
 							onClick={() => {
 								navigate('/home');
 							}}>
-							<p className='signup-text'>Set up later</p>
+							Set up later
 						</button>
-						<button className='btn' type='submit'>
+						<button className='btn w-40' type='submit'>
 							Create Profile
 						</button>
-					</div>
 				</div>
 			</form>
 		</div>
