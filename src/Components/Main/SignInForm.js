@@ -40,11 +40,12 @@ function SignInForm({
 			localStorage.setItem('logInUsername', logIn.username);
 			if (response.status === 200) {
 				setSignedIn(true);
+				console.log(profile)
 				if (profile.email) {
 					navigate('/home');
 				} else {
 					// navigate('/createprofile');
-					navigate('/home');
+					navigate('/createprofile');
 				}
 			}
 		} catch (error) {
