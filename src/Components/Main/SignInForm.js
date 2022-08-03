@@ -40,12 +40,14 @@ function SignInForm({
 			localStorage.setItem('logInUsername', logIn.username);
 			if (response.status === 200) {
 				setSignedIn(true);
-				if (profile.email) {
-					navigate('/home');
-				} else {
-					// navigate('/createprofile');
-					navigate('/home');
-				}
+				navigate('/home');
+				// if (profile.email) {
+				// 	navigate('/home');
+				// }
+				// else {
+				// 	// navigate('/createprofile');
+				// 	navigate('/home');
+				// }
 			}
 		} catch (error) {
 			console.log(error);
