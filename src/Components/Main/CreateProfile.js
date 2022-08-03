@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function CreateProfile({ profile, setProfile, setSignedIn }) {
+function CreateProfile({ setSignedIn }) {
 	const navigate = useNavigate();
+	// Initial Profile state:
+	const initialProfile = {
+		email: '',
+		mobile: '',
+		address: '',
+	};
+
+	const [profile, setProfile] = useState(initialProfile);
 
 	function handleChange(event) {
 		setProfile({
@@ -18,9 +26,7 @@ function CreateProfile({ profile, setProfile, setSignedIn }) {
 
 		try {
 			const response = await axios.post(
-
 				`https://movingco.herokuapp.com/profile/${localStorage.getItem(
-
 					'logInUsername'
 				)}`,
 				profile,
@@ -32,9 +38,9 @@ function CreateProfile({ profile, setProfile, setSignedIn }) {
 			);
 			console.log('RESPONSE', response);
 
-			localStorage.setItem('profileEmail', profile.email);
-			localStorage.setItem('profileMobile', profile.mobile);
-			localStorage.setItem('profileAddress', profile.address);
+			// localStorage.setItem('profileEmail', profile.email);
+			// localStorage.setItem('profileMobile', profile.mobile);
+			// localStorage.setItem('profileAddress', profile.address);
 
 			if (response.status === 200) {
 				setSignedIn(true);

@@ -1,9 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function ViewProfile({ profile, setProfile }) {
-	// const [currentProfile, setCurrentProfile]
+function ViewProfile() {
+	// Initial Profile state:
+	const initialProfile = {
+		email: '',
+		mobile: '',
+		address: '',
+	};
+
+	const [profile, setProfile] = useState(initialProfile);
 	let navigate = useNavigate();
 
 	const getProfile = async () => {
