@@ -8,50 +8,70 @@ MovingCo. is a `Platform` meant to best suit you and your moving needs. We provi
 
 Moving out of your home can be a very emotional and daunting task, thats why we are here to connect you with others going through the exact same experiences. Feel free to read through others posts about moving to pick up some tricks and strategies or feel free to post your own tips and tricks and moving anecdotes. 
 
-
-## Technologies Used
-
 This App is a `micro-services` that has a client side (front-end) repo, and a server-side (back-end) repo.
 
-The Front-End was created using `REACT`
+This repo consist of only the `Front-END`
 
-The Back-End was created using `Java and Spring-boot`
+The Back-End was created using `Java and Spring-boot`and can be found here <a href="https://github.com/AnAppThatMovesYou/back-end-repo-auth">Moving Co. - Back-End</a>
+
+## Technologies Used
+ 
+* REACT
+* BootStrap (a CSS Styling Library)
+* HTML
+* JavaScript
+* CSS
+* Netlify (For Deployment)
 
 
-## Prerequisites
 
-Before you begin, ensure you have met the following requirements:
+## Installing Moving Co. Front-End
 
-* You have installed `Java` version `1.8` or higher.
-* You have an IDE that supports Java ie. `InteliJ or Eclipse`.
-* You have read `<guide/link/documentation_related_to_project>`.
+To install the `Front-End`, follow these steps:
 
-## Installing <project_name>
 
-To install <project_name>, follow these steps:
-
-Linux and macOS:
+1. In your terminal make a new directory and cd into it 
 ```
-<install_command>
-```
-
-Windows:
-```
-<install_command>
-```
-## Using <project_name>
-
-To use <project_name>, follow these steps:
-
-```
-<usage_example>
+$ mkdir MovingCo
+$ cd MovingCo
 ```
 
-Add run commands and examples you think users will find useful. Provide an options reference for bonus points!
+2. Fork/clone down this Repo
+```
+git clone <SSH>
+```
 
-## Contributing to <project_name>
+3. Install all node modules
+
+```
+$ npm install or npm i
+
+```
+## Using Moving Co. Front-End
+
+To use Moving Co. Front-End, follow these steps:
+
+run the folliwng in your terminal to start the app in browser
+```
+$ npm run start or npm start
+```
+
+### Viewing and Interacting with the App
+
+* Create a new User
+* Sign in with that User
+* Create a profile if prompted
+* Navigate to create blog from Nav bar
+* Create a blog post
+* See it populate in the Discover / Home section of the app
+* Click on blog to see the whole post
+
+
+
+
+## Contributing to Moving Co. Front-End
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
-To contribute to <project_name>, follow these steps:
+To contribute to Moving Co. Front-End, follow these steps:
 
 1. Fork this repository.
 2. Create a branch: `git checkout -b <branch_name>`.
@@ -59,23 +79,19 @@ To contribute to <project_name>, follow these steps:
 4. Push to the original branch: `git push origin <project_name>/<location>`
 5. Create the pull request.
 
-Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
 ## Contributors
 
 Thanks to the following people who have contributed to this project:
 
-* [@scottydocs](https://github.com/scottydocs) 📖
-* [@cainwatson](https://github.com/cainwatson) 🐛
-* [@calchuchesta](https://github.com/calchuchesta) 🐛
+* [@sanand100](https://github.com/sanand100) 🏆
+* [@MeesumAshary](https://github.com/MeesumAshary)🐛 
+* [@JuliansRecent](https://github.com/JuliansRecent) 🐛
 
-You might want to consider using something like the [All Contributors](https://github.com/all-contributors/all-contributors) specification and its [emoji key](https://allcontributors.org/docs/en/emoji-key).
 
-## Contact
 
-If you want to contact me you can reach me at <your_email@address.com>.
+## Reference 
 
-## License
-<!--- If you're not sure which open license to use see https://choosealicense.com/--->
-
-This project uses the following license: [<license_name>](<link>).
+* [scottydocs](https://github.com/scottydocs) (for providing this awesome Readme template)
+* <a href= 'https://www.youtube.com/user/edutechional'> Edutechional- youtube channel for React Guides</a>
+* <a href= 'https://www.youtube.com/c/JavaGuides'> Java Guides- youtube channel for React-Springboot Guides</a>
