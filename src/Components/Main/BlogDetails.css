@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     align-self: center;
+    justify-content: center;
     text-align: center;
     font-family: 'Vollkorn', serif;
     font-size: 1.2rem;
@@ -15,7 +16,8 @@
 
 .edit-delete {
     display: flex;
-    justify-content: flex-end;
+/* 
+    justify-content: flex-end; */
 }
 
 .details-btn {
@@ -39,19 +41,35 @@
     font-size: 1.2rem;
     text-align: center;
     font-weight: 500;
-    max-width: 50rem;
+    width: 100%;
+    max-width: 80rem;
     font-style: italic;
 }
 
-img {
-    height: 100%;
-    height: 100%;
+/* img {
+    width: auto;
+    height: 30em;
+    object-fit: cover;
+} */
+.details-img-container {
+    width: auto;
+    height: 30em;
     object-fit: cover;
 }
+
+
+
 
 .blog-content-details {
     font-size: 1.2rem;
     max-width: 40rem;
+}
+
+.blog-content{
+    padding: 4em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: left;
 }
 
 .blog-author{
@@ -59,6 +77,32 @@ img {
     font-style: italic;
 }
 
-.blog-author-name::first-letter{
-    text-transform: capitalize;
+@media (max-width: 735px) {
+    .details-img-container {
+        width: auto;
+        height: 20em;
+        object-fit: cover;
+    }
+
+    .blog-content {
+        padding: 3em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        text-align: left;
+    }
+}
+
+@media (max-width: 500px) {
+    .details-img-container {
+        width: auto;
+        height: 15em;
+        object-fit: cover;
+    }
+
+    .blog-content {
+        padding: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        text-align: left;
+    }
 }
