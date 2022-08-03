@@ -20,7 +20,7 @@ function NavSignedIn({ setSignedIn, signedIn, setInputQuery }) {
 			navigate('/home');
 		} else if (event.target.id === 'about') {
 			navigate('/about');
-		} else if (event.target.id === 'profile'){
+		} else if (event.target.id === 'profile') {
 			navigate('/profile');
 		}
 	}
@@ -28,7 +28,7 @@ function NavSignedIn({ setSignedIn, signedIn, setInputQuery }) {
 	function handleSignedOut(event) {
 		event.preventDefault();
 		setSignedIn(false);
-		localStorage.removeItem('LogInJwt');
+		localStorage.clear();
 		navigate('/');
 	}
 
@@ -54,7 +54,7 @@ function NavSignedIn({ setSignedIn, signedIn, setInputQuery }) {
 						onChange={handleChange}
 						value={formState.input}
 					/>
-					<label htmlFor="search-bar">Search</label>
+					<label htmlFor='search-bar'>Search</label>
 					<button
 						class='navbar-toggler'
 						type='button'

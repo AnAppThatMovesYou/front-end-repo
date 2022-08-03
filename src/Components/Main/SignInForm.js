@@ -40,7 +40,7 @@ function SignInForm({
 			localStorage.setItem('logInUsername', logIn.username);
 			if (response.status === 200) {
 				setSignedIn(true);
-				if (profile.email) {
+				if (true) {
 					navigate('/home');
 				} else {
 					// navigate('/createprofile');
