@@ -16,6 +16,8 @@ function SignInForm({
 }) {
 	const navigate = useNavigate();
 
+	const [invalidUsername, setinvalidUsername] = useState(false);
+
 	function handleChange(event) {
 		setLogIn({
 			...logIn,
@@ -38,18 +40,24 @@ function SignInForm({
 
 			localStorage.setItem('LogInJwt', response.data.token);
 			localStorage.setItem('logInUsername', logIn.username);
-			if (response.status === 200) {
+			// if (response.status === 200) {
+			// 	setSignedIn(true);
+
+			// 	navigate('/home');
+			// 	// if (profile.email) {
+			// 	// 	navigate('/home');
+			// 	// }
+			// 	// else {
+			// 	// 	// navigate('/createprofile');
+			// 	// 	navigate('/home');
+			// 	// }
+
+			// }
+			if (response.data.token == null) {
+				setinvalidUsername(true);
+			} else if (response.data.token != null) {
 				setSignedIn(true);
-
 				navigate('/home');
-				// if (profile.email) {
-				// 	navigate('/home');
-				// }
-				// else {
-				// 	// navigate('/createprofile');
-				// 	navigate('/home');
-				// }
-
 			}
 		} catch (error) {
 			console.log(error);
@@ -86,6 +94,11 @@ function SignInForm({
 						value={logIn.password}
 						onChange={handleChange}
 					/>
+					{invalidUsername ? (
+						<div className='username-taken'>This username does not exist! </div>
+					) : (
+						''
+					)}
 					<div className='button-container'>
 						<div className='d-flex flex-row'>
 							<button className='btn w-50' type='button' onClick={handleSignup}>
