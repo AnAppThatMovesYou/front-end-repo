@@ -49,7 +49,7 @@ function BlogDetails({ logInJwt }) {
 	// }
 	if (blogDetails) {
 		return (
-			<li className='blog-card-details details-background'>
+			<div className='blog-card-details details-background'>
 				<h2 className='blog-title'> {blogDetails.title}</h2>
 				<div className='blog-author'>
 					Blog by:{' '}
@@ -64,32 +64,35 @@ function BlogDetails({ logInJwt }) {
 
 				<div className='blog-content'>{blogDetails.content}</div>
 
-				<div>Category: {`#${blogDetails.category}`}</div>
-
-				{blogDetails.user.username === localStorage.getItem('logInUsername') ? (
-					<button
-						type='button'
-						className='details-btn btn'
-						onClick={handleDelete}>
-						Delete Post
-					</button>
-				) : (
-					''
-				)}
-				{blogDetails.user.username === localStorage.getItem('logInUsername') ? (
-					<button
-						type='button'
-						className='details-btn btn'
-						onClick={(event) => {
-							event.preventDefault();
-							navigate(`/editblog/${blogDetails.id}`);
-						}}>
-						Edit Post
-					</button>
-				) : (
-					''
-				)}
-			</li>
+				{/* <div>Category: {`#${blogDetails.category}`}</div> */}
+				<div>
+					{blogDetails.user.username ===
+					localStorage.getItem('logInUsername') ? (
+						<button
+							type='button'
+							className='details-btn btn'
+							onClick={handleDelete}>
+							Delete Post
+						</button>
+					) : (
+						''
+					)}
+					{blogDetails.user.username ===
+					localStorage.getItem('logInUsername') ? (
+						<button
+							type='button'
+							className='details-btn btn'
+							onClick={(event) => {
+								event.preventDefault();
+								navigate(`/editblog/${blogDetails.id}`);
+							}}>
+							Edit Post
+						</button>
+					) : (
+						''
+					)}
+				</div>
+			</div>
 		);
 	}
 }
