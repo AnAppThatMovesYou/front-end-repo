@@ -33,18 +33,18 @@ function SignInForm({
 				logIn
 			);
 
-			console.log('RESPONSE', response);
+			
 			setLogInJwt(response.data.token);
 
 			localStorage.setItem('LogInJwt', response.data.token);
 			localStorage.setItem('logInUsername', logIn.username);
 			if (response.status === 200) {
 				setSignedIn(true);
-				console.log(profile)
+				
 				if (profile.email) {
 					navigate('/home');
 				} else {
-					// navigate('/createprofile');
+					
 					navigate('/createprofile');
 				}
 			}

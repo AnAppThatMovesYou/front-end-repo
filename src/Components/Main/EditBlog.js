@@ -33,7 +33,7 @@ function EditBlog(props) {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		console.log('THIS IS WHAT IM TRYING TO PRINT', currentPost);
+		
 		try {
 			const response = await axios.put(
 				`https://movingco.herokuapp.com/blogs/${id}`,
@@ -44,7 +44,7 @@ function EditBlog(props) {
 					},
 				}
 			);
-			console.log(response);
+			
 			if (response.status === 200) {
 				navigate('/home');
 			}

@@ -38,9 +38,9 @@ function NavSignedIn({ setSignedIn, signedIn, setInputQuery }) {
 	}
 	return (
 		<div>
-			<nav class='navbar navbar-expand-lg signed-in shadow-lg default-font'>
-				<div class='container-fluid real-navbar'>
-					<Link class='navbar-brand' to='/home'>
+			<nav className='navbar navbar-expand-lg signed-in shadow-lg default-font'>
+				<div className='container-fluid real-navbar'>
+					<Link className='navbar-brand' to='/home'>
 						<img
 							src={require('../../images/MovingCo-logos_transparent.png')}
 							alt=''
@@ -56,29 +56,29 @@ function NavSignedIn({ setSignedIn, signedIn, setInputQuery }) {
 					/>
 					<label htmlFor='search-bar'>Search</label>
 					<button
-						class='navbar-toggler'
+						className='navbar-toggler'
 						type='button'
 						data-bs-toggle='collapse'
 						data-bs-target='#navbarSupportedContent'
 						aria-controls='navbarSupportedContent'
 						aria-expanded='false'
 						aria-label='Toggle navigation'>
-						<span class='navbar-toggler-icon'></span>
+						<span className='navbar-toggler-icon'></span>
 					</button>
-					<div class='collapse navbar-collapse' id='navbarSupportedContent'>
-						<ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
-							<li class='nav-item'>
+					<div className='collapse navbar-collapse' id='navbarSupportedContent'>
+						<ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
+							<li className='nav-item'>
 								<a
-									class='nav-link'
+									className='nav-link'
 									href='#'
 									id='discover'
 									onClick={handleSignedin}>
 									Discover
 								</a>
 							</li>
-							<li class='nav-item'>
+							<li className='nav-item'>
 								<a
-									class='nav-link'
+									className='nav-link'
 									href='/createblog'
 									id='create'
 									onClick={handleSignedin}>

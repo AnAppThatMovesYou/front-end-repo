@@ -18,9 +18,7 @@ function CreateProfile({ profile, setProfile, setSignedIn }) {
 
 		try {
 			const response = await axios.post(
-
 				`https://movingco.herokuapp.com/profile/${localStorage.getItem(
-
 					'logInUsername'
 				)}`,
 				profile,
@@ -30,7 +28,6 @@ function CreateProfile({ profile, setProfile, setSignedIn }) {
 					},
 				}
 			);
-			console.log('RESPONSE', response);
 
 			localStorage.setItem('profileEmail', profile.email);
 			localStorage.setItem('profileMobile', profile.mobile);
