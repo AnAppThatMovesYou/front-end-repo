@@ -59,7 +59,7 @@ function BlogDetails({ logInJwt }) {
 				<div className='blog-summary'>{blogDetails.summary}</div>
 
 				<div>
-					<img src={blogDetails.imgUrl} alt='image of family moving' />
+					<img src={blogDetails.imageUrl} alt='image of family moving' />
 				</div>
 
 				<div className='blog-content'>{blogDetails.content}</div>
@@ -89,7 +89,6 @@ function BlogDetails({ logInJwt }) {
 				) : (
 					''
 				)}
-
 			</li>
 		);
 	}

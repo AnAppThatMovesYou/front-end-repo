@@ -43,7 +43,8 @@ function SignInForm({
 				if (profile.email) {
 					navigate('/home');
 				} else {
-					navigate('/createprofile');
+					// navigate('/createprofile');
+					navigate('/home');
 				}
 			}
 		} catch (error) {
