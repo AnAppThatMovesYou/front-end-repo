@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './ViewProfile.css'
+import './ViewProfile.css';
 
 function ViewProfile() {
 	// Initial Profile state:
@@ -41,7 +41,9 @@ function ViewProfile() {
 		return (
 			<div className='d-flex justify-content-center align-items-center container-fluid big-container'>
 				<div className='container-fluid d-flex flex-column justify-content-center align-items-center form profile-container'>
-					<h2 className='default-font'>Welcome {localStorage.getItem('logInUsername')}!</h2>
+					<h2 className='default-font'>
+						Welcome {localStorage.getItem('logInUsername')}!
+					</h2>
 					<ul className=''>
 						<li className='profile-details vollkorn'>
 							Email: <span className='profile-details'>{profile.email}</span>
@@ -60,23 +62,27 @@ function ViewProfile() {
 		);
 	} else {
 		return (
-			<div>
-				<h2>Welcome! {localStorage.getItem('logInUsername')}</h2>
+			<div className='d-flex justify-content-center align-items-center container-fluid big-container'>
+				<div className='container-fluid d-flex flex-column justify-content-center align-items-center form profile-container'>
+					<h2 className='default-font'>
+						Welcome! {localStorage.getItem('logInUsername')}
+					</h2>
 
-				<ul>
-					<li className='profile-details'>Email:</li>
-					<li className='profile-details'>Mobile Number:</li>
-					<li className='profile-details'>Address:</li>
-				</ul>
+					<ul>
+						<li className='profile-details vollkorn'>Email:</li>
+						<li className='profile-details vollkorn'>Mobile Number:</li>
+						<li className='profile-details vollkorn'>Address:</li>
+					</ul>
 
-				<button
-					className='btn'
-					type='button'
-					onClick={() => {
-						navigate('/createprofile');
-					}}>
-					Add Profile
-				</button>
+					<button
+						className='btn'
+						type='button'
+						onClick={() => {
+							navigate('/createprofile');
+						}}>
+						Add Profile
+					</button>
+				</div>
 			</div>
 		);
 	}
