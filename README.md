@@ -84,7 +84,7 @@ To contribute to Moving Co. Front-End, follow these steps:
 
 Thanks to the following people who have contributed to this project:
 
-* [@sanand100](https://github.com/sanand100) 📖
+* [@sanand100](https://github.com/sanand100) ♕
 * [@MeesumAshary](https://github.com/MeesumAshary)🐛 
 * [@JuliansRecent](https://github.com/JuliansRecent) 🐛
 
