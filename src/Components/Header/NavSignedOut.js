@@ -3,11 +3,32 @@ import { useNavigate } from 'react-router-dom';
 
 function NavSignedOut(props) {
 	let navigate = useNavigate();
+
+	function handleLogo(event) {
+		event.preventDefault();
+		navigate('/');
+	}
+
+	function handleSignUp(event) {
+		event.preventDefault();
+		navigate('/signup');
+	}
+
+	function handleSignIn(event) {
+		event.preventDefault();
+		navigate('/signin');
+	}
+
+	function handleAbout(event) {
+		event.preventDefault();
+		navigate('/about');
+	}
+
 	return (
 		<div className='header'>
 			<nav className='navbar navbar-expand-lg signed-out'>
 				<div className='container-fluid real-navbar'>
-					<a className='navbar-brand' href='/'>
+					<a className='navbar-brand' href='#' onClick={handleLogo}>
 						<img
 							src={require('../../images/MovingCo-logos_transparent.png')}
 							alt=''
@@ -27,17 +48,17 @@ function NavSignedOut(props) {
 					<div className='collapse navbar-collapse' id='navbarSupportedContent'>
 						<ul className='navbar-nav ms-auto mb-2 mb-lg-0 default-font light-text-color'>
 							<li className='nav-item'>
-								<a className='nav-link' href='/signup'>
+								<a className='nav-link' href='#' onClick={handleSignUp}>
 									Sign up
 								</a>
 							</li>
 							<li className='nav-item'>
-								<a className='nav-link' href='/signin'>
+								<a className='nav-link' href='#' onClick={handleSignIn}>
 									Sign in
 								</a>
 							</li>
 							<li className='nav-item'>
-								<a href='/about' className='nav-link'>
+								<a href='#' className='nav-link' onClick={handleAbout}>
 									About
 								</a>
 							</li>

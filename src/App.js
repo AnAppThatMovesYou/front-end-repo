@@ -155,10 +155,8 @@ function App() {
 					/>
 				</Routes>
 			</main>
-			{/* <footer>{signedIn ? <FooterSignedIn /> : <FooterSignedIn />}</footer> */}
-			<footer>
-				<FooterSignedIn />
-			</footer>
+			<footer>{signedIn ? <FooterSignedIn /> : <FooterSignedOut />}</footer>
+			<footer>{/* <FooterSignedIn /> */}</footer>
 		</div>
 	);
 }
