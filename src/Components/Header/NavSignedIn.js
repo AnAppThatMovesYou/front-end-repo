@@ -56,7 +56,9 @@ function NavSignedIn({ setSignedIn, signedIn, setInputQuery }) {
 							value={formState.input}
 							className='search-input'
 						/>
-						<label htmlFor='search-bar' className='search signedout-btn'>Search</label>
+						<label htmlFor='search-bar' className='search signedout-btn'>
+							Search
+						</label>
 					</div>
 					<button
 						class='navbar-toggler'
