@@ -1,7 +1,18 @@
 import './Footer.css';
 import { SocialIcon } from 'react-social-icons';
+import { useNavigate } from 'react-router-dom';
 
 function FooterSignedIn(props) {
+	let navigate = useNavigate();
+
+	function handleDiscover(event) {
+		event.preventDefault();
+		navigate('/home');
+	}
+	function handleAbout(event) {
+		event.preventDefault();
+		navigate('/about');
+	}
 	return (
 		<div className='container-fluid footer p-4 pb-0'>
 			<section className=''>
@@ -27,17 +38,12 @@ function FooterSignedIn(props) {
 							<h5 className=''>Get Started</h5>
 							<ul className='list-unstyled mb-0'>
 								<li>
-									<a href='/signup' className=''>
-										Sign Up
+									<a href='#' className='' onClick={handleDiscover}>
+										Discover
 									</a>
 								</li>
 								<li>
-									<a href='/signin' className=''>
-										Sign In
-									</a>
-								</li>
-								<li>
-									<a href='/about' className=''>
+									<a href='#' className='' onClick={handleAbout}>
 										About
 									</a>
 								</li>
