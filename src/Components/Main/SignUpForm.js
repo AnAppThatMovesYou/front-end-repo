@@ -59,9 +59,9 @@ function SignUpForm({
 				</h1>
 				<input
 					id='username'
-					type='text'
+					type='email'
 					className='form-control position-relative mb-1 input'
-					placeholder='Username'
+					placeholder='Email'
 					value={signUp.username}
 					onChange={handleChange}
 				/>
@@ -80,7 +80,9 @@ function SignUpForm({
                     placeholder='Email'
 				/> */}
 				{usernameExists ? (
-					<div className='username-taken'>This username is already taken! </div>
+					<div className='username-taken'>
+						This email already has an account!{' '}
+					</div>
 				) : (
 					''
 				)}
