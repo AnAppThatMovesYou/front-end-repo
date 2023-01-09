@@ -2,9 +2,11 @@ import './BlogDetails.css';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import Comments from './Comments';
 
 function BlogDetails({ logInJwt }) {
 	const navigate = useNavigate();
+	const params = useParams();
 
 	const [blogDetails, setBlogDetails] = useState(null);
 	const { id } = useParams();
@@ -44,9 +46,38 @@ function BlogDetails({ logInJwt }) {
 		}
 	};
 
-	// const handleDelete =()=>{
+	const [currentComments, setCurrentComments] = useState([]);
 
-	// }
+	const initialCommentState = {
+		title: '',
+		body: '',
+	};
+
+	const [commentState, setCommentState] = useState(initialCommentState);
+
+	function handleChange(event) {
+		setCommentState({ ...commentState, [event.target.id]: event.target.value });
+	}
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		try {
+			const response = await axios.post(
+				'https://movingco.herokuapp.com/comments',
+				{ ...commentState, postId: params.id }
+			);
+			if (response.status === 200) {
+				getBlogDetails();
+				setCommentState(initialCommentState);
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const handleEdit = async () => {
+		navigate(`/editpost/${String(params.id)}`);
+	};
+
 	if (blogDetails) {
 		return (
 			<li className='blog-card-details details-background d-flex justify-content-center align-items-center'>
@@ -64,7 +95,40 @@ function BlogDetails({ logInJwt }) {
 
 				<div className='blog-content'>{blogDetails.content}</div>
 
-				{/* <div>Category: {`#${blogDetails.category}`}</div> */}
+				<div className='comments'>
+					<form
+						className='form d-flex flex-column w-100'
+						onSubmit={handleSubmit}>
+						<input
+							className='create-blog-form form-group shadow-lg d-flex flex-column justify-content-center align-items-center gap-3'
+							type='text'
+							placeholder='Your Comment'
+							onChange={handleChange}
+							value={commentState.body}></input>
+
+						<div className='d-flex justify-content-end'>
+							<button className='btn'>Comment</button>
+						</div>
+					</form>
+
+					<h5 className='d-flex flex-row w-100 justify-content-left'>
+						Comments
+					</h5>
+					<div>
+						{currentComments.map((comment) => {
+							return (
+								<Comments
+									body={comment.body}
+									createdAt={comment.createdAt}
+									id={comment._id}
+									getPost={getBlogDetails}
+									key={comment._id}
+								/>
+							);
+						})}
+					</div>
+				</div>
+
 				<div className='d-flex flex-row w-100 justify-content-center'>
 					{blogDetails.user.username ===
 					localStorage.getItem('logInUsername') ? (
