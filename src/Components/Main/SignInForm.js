@@ -79,10 +79,10 @@ function SignInForm({
 						Sign In
 					</h1>
 					<input
-						type='text'
+						type='email'
 						id='username'
 						className='form-control position-relative mb-1 input'
-						placeholder='Username'
+						placeholder='Email'
 						value={logIn.username}
 						onChange={handleChange}
 					/>

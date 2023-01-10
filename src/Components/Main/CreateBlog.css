@@ -30,7 +30,7 @@
 
 @media (max-width: 1000px) {
     .create-blog-form {
-        max-height: 80vh !important;
+        max-height: 95vh !important;
         width: 90vw;
         padding: 1rem;
         border: solid black;
@@ -41,8 +41,8 @@
 
 @media (min-width: 1000px) {
     .create-blog-form {
-        max-height: 80vh !important;
-        width: 55vw;
+        max-height: 95vh !important;
+        width: 85vw;
         padding: 1rem;
         border: solid black;
         border-radius: 1rem;
