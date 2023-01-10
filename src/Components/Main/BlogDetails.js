@@ -62,7 +62,7 @@ function BlogDetails({ logInJwt }) {
 					<img src={blogDetails.imageUrl} alt='image of family moving' />
 				</div>
 
-				<div className='blog-content'>{blogDetails.content}</div>
+				<pre className='blog-content'>{blogDetails.content}</pre>
 
 				{/* <div>Category: {`#${blogDetails.category}`}</div> */}
 				<div className='d-flex flex-row w-100 justify-content-center'>
