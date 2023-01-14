@@ -27,7 +27,7 @@ header {
 }
 
 .search-input {
-    width: 10rem;
+    width: 11rem;
     padding: 0;
     margin-right: 5px;
     border: solid black 0.15rem;
@@ -41,6 +41,10 @@ header {
 }
 
 @media (max-width: 530px) {
+    .logo {
+        width: 10rem;
+    }
+
     .search-input {
         width: 5rem;
         padding: 0;

@@ -17,6 +17,7 @@
 
 div .signedout-btn {
     color: black !important;
+    width: fit-content;
     font-size: 1.3rem;
     border: solid black 2px !important;
     border-radius: 1rem !important;
